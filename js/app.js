@@ -371,9 +371,8 @@
     $('#podium').innerHTML = [2, 1, 3].map((p) => {
       const t = teamById[places[p]];
       if (!t) return '<div></div>';
-      const ic = p === 1
-        ? '<svg class="pod__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-trophy-fill"></use></svg>'
-        : icon('medal', 'pod__icon');
+      const trophy = { 1: 'trophy-fill', 2: 'trophy-silver', 3: 'trophy-bronze' }[p];
+      const ic = `<svg class="pod__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-${trophy}"></use></svg>`;
       return `
         <div class="pod pod--${p} reveal" style="--d:${p === 1 ? 0 : p === 2 ? 0.15 : 0.3}s;--ring:${esc(t.color)}">
           ${p === 1 ? sparkles : ''}
