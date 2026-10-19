@@ -95,7 +95,7 @@ Tips:
 3. Set Framework Preset to **Other**, then click **Deploy**.
 
 ### After hosting: make the WhatsApp preview work
-Open `index.html` and replace **`https://YOUR-SITE-URL`** (2 places: `og:url` and `og:image`) with your real address, e.g. `https://phule-chashak.netlify.app`. Then upload again.
+`index.html` is already set to the GitHub Pages address **https://vkeychaudhari.github.io/cricket-chashak/** (`canonical`, `og:url`, `og:image`). If you host somewhere else or add a custom domain, replace that address in those 3 places and upload again.
 
 WhatsApp caches link previews. If an old preview shows up, share the link with `?v=2` at the end.
 
