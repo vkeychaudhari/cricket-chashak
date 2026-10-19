@@ -29,7 +29,7 @@ window.SITE_CONFIG = {
 
   /* ---------- Links ---------- */
   links: {
-    registrationForm: "", // PASTE GOOGLE FORM LINK here, e.g. "https://forms.gle/AbCdEf123"
+    registrationForm: "https://docs.google.com/forms/d/e/1FAIpQLScUfC_euI_HjzbfOx9DgTEDQSOH7WdnMllYwfx1VdtYy3a0bQ/viewform", // Google Form for registration
     instagram: "",        // PASTE INSTAGRAM PAGE URL here, e.g. "https://www.instagram.com/yourpage"
     mapEmbed: "",         // optional: Google Maps → Share → "Embed a map" → copy only the src="..." URL
     mapLink: "",          // optional: Google Maps share link (leave "" to auto-generate from venue)
