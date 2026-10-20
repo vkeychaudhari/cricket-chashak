@@ -456,8 +456,10 @@
               <div><span class="tcard__kicker">${L('team')}</span><h3 class="tcard__team">${T(t.name)}</h3></div>
             </div>
             <div class="tcard__bar"></div>
-            <div class="tcard__squad-title"><span>${L('squad')}</span><span>${N(t.players.length)} ${L('playersUnit')}</span></div>
-            <ol class="squad">${t.players.map((p, j) => `<li><b>${N(j + 1)}</b><span>${T(p)}</span></li>`).join('')}</ol>
+            <div class="tcard__squad-title"><span>${L('squad')}</span>${(t.players || []).length ? `<span>${N(t.players.length)} ${L('playersUnit')}</span>` : ''}</div>
+            ${(t.players || []).length
+              ? `<ol class="squad">${t.players.map((p, j) => `<li><b>${N(j + 1)}</b><span>${T(p)}</span></li>`).join('')}</ol>`
+              : `<p class="squad-soon">${icon('users')}<span>${L('squadSoon')}</span></p>`}
           </div>
         </article>
       </div>`).join('');
@@ -470,6 +472,15 @@
     const logo = (t) => img(t.logo, { kind: 'logo', initials: initials(t), color: t.color }, { alt: both((l) => `${pick(t.name, l)} ${pick(label('logo'), l)}`) });
     const sparkles = [[8, 18, 0], [86, 10, .8], [16, 46, 1.6], [80, 40, .4], [50, -4, 1.2]]
       .map(([x, y, d]) => `<svg class="sparkle" style="left:${x}%;top:${y}%;animation-delay:${d}s" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"></use></svg>`).join('');
+
+    // results not confirmed yet: show a calm placeholder instead of an empty podium
+    const hasResults = [1, 2, 3].some((p) => teamById[places[p]]);
+    $('.podium-floor').hidden = !hasResults;
+    if (!hasResults) {
+      $('#podium').innerHTML = `<div class="podium-soon reveal"><svg class="podium-soon__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-trophy-fill"></use></svg><p>${L('resultsSoon')}</p></div>`;
+      $('#podium4').innerHTML = '';
+      return;
+    }
 
     $('#podium').innerHTML = [2, 1, 3].map((p) => {
       const t = teamById[places[p]];
@@ -556,6 +567,12 @@
       const dotLabel = opts.dotLabel || ((k) => both((l) => `${pick(label('slide'), l)} ${digits(k + 1, l)}`));
       $('[data-dots]', root).innerHTML = this.slides.map((_, k) => `<button type="button" class="dot-btn" ${A('aria-label', dotLabel(k))}></button>`).join('');
       this.dots = $$('.dot-btn', root);
+      // many slides: phones show a compact "3 / 11" counter instead of a wrapping row of dots
+      if (this.n > 7) {
+        $('[data-controls]', root).classList.add('car-ctrl--many');
+        $('[data-dots]', root).insertAdjacentHTML('afterend', '<span class="car-count" aria-hidden="true"></span>');
+        this.count = $('.car-count', root);
+      }
       this.toggleBtn = $('[data-toggle]', root);
 
       this.dots.forEach((d, k) => d.addEventListener('click', () => this.go(k)));
@@ -598,6 +615,7 @@
         if (on) s.removeAttribute('inert'); else s.setAttribute('inert', '');
       });
       this.dots.forEach((d, j) => d.setAttribute('aria-current', String(j === this.i)));
+      if (this.count) this.count.innerHTML = T(both((l) => digits(`${this.i + 1} / ${this.n}`, l)));
     }
     syncToggle() {
       this.root.classList.toggle('is-paused', this.userPaused);

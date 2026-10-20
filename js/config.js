@@ -132,8 +132,8 @@ window.SITE_CONFIG = {
     // DUMMY draft – edit freely
     story: [
       {
-        mr: "२०२६ मध्ये नाशिकच्या मातीत एका नव्या क्रिकेट परंपरेचा जन्म झाला. महात्मा ज्योतिराव फुले क्रिकेट चषकाच्या पहिल्या पर्वात ८ संघ आणि ८० खेळाडू मैदानात उतरले आणि प्रेक्षकांच्या उदंड प्रतिसादात समता, बंधुता आणि खिलाडूवृत्तीचा खरा उत्सव साजरा झाला.",
-        en: "In 2026, a new cricket tradition was born on the grounds of Nashik. The first season of the Mahatma Jyotirao Phule Cricket Chashak brought 8 teams and 80 players onto the field, cheered on by passionate crowds, in a true celebration of equality, brotherhood and sportsmanship.",
+        mr: "२०२६ मध्ये नाशिकच्या मातीत एका नव्या क्रिकेट परंपरेचा जन्म झाला. महात्मा ज्योतिराव फुले क्रिकेट चषकाच्या पहिल्या पर्वात ११ संघ मैदानात उतरले आणि प्रेक्षकांच्या उदंड प्रतिसादात समता, बंधुता आणि खिलाडूवृत्तीचा खरा उत्सव साजरा झाला.",
+        en: "In 2026, a new cricket tradition was born on the grounds of Nashik. The first season of the Mahatma Jyotirao Phule Cricket Chashak brought 11 teams onto the field, cheered on by passionate crowds, in a true celebration of equality, brotherhood and sportsmanship.",
       },
       {
         mr: "प्रत्येक चौकार, प्रत्येक बळी आणि प्रत्येक झेलाने एकच संदेश दिला — मैदानात सगळे समान! पहिल्या पर्वाच्या या सुवर्ण आठवणी आता पर्व २ साठी नवी प्रेरणा आहेत.",
@@ -141,8 +141,8 @@ window.SITE_CONFIG = {
       },
     ],
 
-    highlights: [ // DUMMY numbers
-      { value: 8, label: { mr: "संघ", en: "Teams" } },
+    highlights: [ // teams = real; players, matches & sixes are DUMMY
+      { value: 11, label: { mr: "संघ", en: "Teams" } },
       { value: 80, label: { mr: "खेळाडू", en: "Players" } },
       { value: 15, label: { mr: "सामने", en: "Matches" } },
       { value: 120, suffix: "+", label: { mr: "षटकार", en: "Sixes" } },
@@ -150,93 +150,120 @@ window.SITE_CONFIG = {
 
     /* Owner & Team slideshow — add / remove / edit teams here.
        id: short unique name (used by standings & awards below)
+       name: team name (currently the owner's brand — change if the team had another name)
        color: team colour (hex) – used for accents & logo placeholder
        ownerPhoto / logo: image paths (add the files to the images folder)
-       players: list of names – plain "Name" or { mr: "नाव", en: "Name" } */
-    teams: [ // DUMMY teams, owners & players
+       players: list of names – plain "Name" or { mr: "नाव", en: "Name" }.
+                Leave [] to show "squad list coming soon". */
+    teams: [
       {
-        id: "nashik-kings", color: "#c8960c",
-        name: { mr: "नाशिक किंग्ज", en: "Nashik Kings" },
-        owner: { mr: "राहुल पाटील", en: "Rahul Patil" },
-        ownerPhoto: "images/season1/owners/team-1-owner.jpg",
-        logo: "images/season1/logos/team-1-logo.png",
-        players: ["Akash Pawar (C)", "Rohit Deshmukh", "Sagar Kale", "Vishal More", "Ganesh Bhosale", "Pranav Joshi", "Kunal Wagh", "Siddharth Gaikwad", "Omkar Jadhav", "Tejas Shinde"],
+        id: "kashmire-electricals", color: "#1E88E5",
+        name: "Kashmire Electricals",
+        owner: "Nagesh Kashmire",
+        ownerPhoto: "images/season1/owners/owner-01-nagesh-kashmire.webp",
+        logo: "images/season1/logos/logo-01-kashmire-electricals.webp",
+        players: [],
       },
       {
-        id: "godavari-warriors", color: "#0284c7",
-        name: { mr: "गोदावरी वॉरियर्स", en: "Godavari Warriors" },
-        owner: { mr: "सचिन जाधव", en: "Sachin Jadhav" },
-        ownerPhoto: "images/season1/owners/team-2-owner.jpg",
-        logo: "images/season1/logos/team-2-logo.png",
-        players: ["Aniket Sonawane (C)", "Mayur Thakare", "Nikhil Borse", "Yogesh Ahire", "Shubham Nikam", "Prathamesh Kulkarni", "Rushikesh Patil", "Harshal Deore", "Amit Sali", "Vaibhav Khairnar"],
+        id: "aaradhya-developers", color: "#B8860B",
+        name: "Aaradhya Developers",
+        owner: "Bhushan Shinde",
+        ownerPhoto: "images/season1/owners/owner-02-bhushan-shinde.webp",
+        logo: "images/season1/logos/logo-02-aaradhya-developers.webp",
+        players: [],
       },
       {
-        id: "panchavati-panthers", color: "#dc2626",
-        name: { mr: "पंचवटी पँथर्स", en: "Panchavati Panthers" },
-        owner: { mr: "अमोल शिंदे", en: "Amol Shinde" },
-        ownerPhoto: "images/season1/owners/team-3-owner.jpg",
-        logo: "images/season1/logos/team-3-logo.png",
-        players: ["Swapnil Gite (C)", "Dinesh Sangle", "Saurabh Chavan", "Akshay Mali", "Rahul Darade", "Kiran Bagul", "Mangesh Kadam", "Ajinkya Pathare", "Suraj Bhamre", "Nilesh Ghuge"],
+        id: "mayur-enterprises", color: "#1F5FAD",
+        name: "Mayur Enterprises",
+        owner: "Bhausaheb Mali & Sagar Mahajan",
+        ownerPhoto: "images/season1/owners/owner-03-bhausaheb-mali-sagar-mahajan.webp",
+        logo: "images/season1/logos/logo-03-mayur-enterprises.webp",
+        players: [],
       },
       {
-        id: "trimbak-titans", color: "#16a34a",
-        name: { mr: "त्र्यंबक टायटन्स", en: "Trimbak Titans" },
-        owner: { mr: "विकास गायकवाड", en: "Vikas Gaikwad" },
-        ownerPhoto: "images/season1/owners/team-4-owner.jpg",
-        logo: "images/season1/logos/team-4-logo.png",
-        players: ["Pankaj Hire (C)", "Sandeep Jagtap", "Ravi Kshirsagar", "Abhishek Mahajan", "Ketan Suryawanshi", "Lalit Pagar", "Bhushan Avhad", "Hemant Wagh", "Datta Kothawade", "Sumit Bachhav"],
+        id: "vazcon-realty", color: "#E06A1B",
+        name: "Vazcon Realty",
+        owner: "Tejas Vazare",
+        ownerPhoto: "images/season1/owners/owner-04-tejas-vazare.webp",
+        logo: "images/season1/logos/logo-04-vazcon-realty.webp",
+        players: [],
       },
       {
-        id: "indiranagar-strikers", color: "#ea580c",
-        name: { mr: "इंदिरानगर स्ट्रायकर्स", en: "Indira Nagar Strikers" },
-        owner: { mr: "संतोष भालेराव", en: "Santosh Bhalerao" },
-        ownerPhoto: "images/season1/owners/team-5-owner.jpg",
-        logo: "images/season1/logos/team-5-logo.png",
-        players: ["Gaurav Sonar (C)", "Vikram Dhage", "Ashish Pingle", "Tushar Mhaske", "Prasad Kokate", "Chetan Lokhande", "Atul Nagare", "Jayesh Kute", "Manoj Wakchaure", "Shrikant Dalvi"],
+        id: "logique-technologies", color: "#0097A7",
+        name: "Logique Technologies",
+        owner: "Yogesh Sonnis",
+        ownerPhoto: "images/season1/owners/owner-05-yogesh-sonnis.webp",
+        logo: "images/season1/logos/logo-05-logique-technologies.webp",
+        players: [],
       },
       {
-        id: "satpur-giants", color: "#4f46e5",
-        name: { mr: "सातपूर सुपर जायंट्स", en: "Satpur Super Giants" },
-        owner: { mr: "प्रवीण काळे", en: "Pravin Kale" },
-        ownerPhoto: "images/season1/owners/team-6-owner.jpg",
-        logo: "images/season1/logos/team-6-logo.png",
-        players: ["Rajesh Bhagat (C)", "Sanket Gholap", "Umesh Tidke", "Rohan Lahamge", "Sachin Kasar", "Vinod Rokade", "Kailas Gangurde", "Deepak Shirsath", "Tanmay Ugale", "Ashok Bodke"],
+        id: "ca-india", color: "#2E7D32",
+        name: "CA India",
+        owner: "Pratik Jejurkar",
+        ownerPhoto: "images/season1/owners/owner-06-pratik-jejurkar.webp",
+        logo: "images/season1/logos/logo-06-ca-india.webp",
+        players: [],
       },
       {
-        id: "deolali-daredevils", color: "#db2777",
-        name: { mr: "देवळाली डेअरडेव्हिल्स", en: "Deolali Daredevils" },
-        owner: { mr: "नितीन पवार", en: "Nitin Pawar" },
-        ownerPhoto: "images/season1/owners/team-7-owner.jpg",
-        logo: "images/season1/logos/team-7-logo.png",
-        players: ["Mahendra Kshatriya (C)", "Ajay Mundhe", "Shekhar Jondhale", "Kapil Pagare", "Nitesh Barde", "Pratik Chaudhari", "Sunil Mogal", "Hrishikesh Dongre", "Yash Ghodke", "Balaji Shelke"],
+        id: "the-suki-media", color: "#E53935",
+        name: "The Suki Media",
+        owner: "Kishan Mahajan",
+        ownerPhoto: "images/season1/owners/owner-07-kishan-mahajan.webp",
+        logo: "images/season1/logos/logo-07-the-suki-media.webp",
+        players: [],
       },
       {
-        id: "sinnar-sixers", color: "#0d9488",
-        name: { mr: "सिन्नर सिक्सर्स", en: "Sinnar Sixers" },
-        owner: { mr: "महेश साळवे", en: "Mahesh Salve" },
-        ownerPhoto: "images/season1/owners/team-8-owner.jpg",
-        logo: "images/season1/logos/team-8-logo.png",
-        players: ["Ravindra Sangale (C)", "Ganesh Wable", "Rupesh Dighe", "Kishor Hande", "Vijay Bhor", "Sahil Gunjal", "Pavan Kakad", "Dnyaneshwar Shelar", "Aditya Varpe", "Mohan Thete"],
+        id: "jay-shankar-group", color: "#9E1B32",
+        name: "Jay Shankar Group",
+        owner: "Jaywant Jejurkar",
+        ownerPhoto: "images/season1/owners/owner-08-jaywant-jejurkar.webp",
+        logo: "images/season1/logos/logo-08-jay-shankar-group.webp",
+        players: [],
+      },
+      {
+        id: "data-engineer", color: "#0B2A6F",
+        name: "Data Engineer",
+        owner: "Satish Gaikwad",
+        ownerPhoto: "images/season1/owners/owner-09-satish-gaikwad.webp",
+        logo: "images/season1/logos/logo-09-data-engineer.webp",
+        players: [],
+      },
+      {
+        id: "mali-kitchens", color: "#EF6C00",
+        name: "Mali Kitchens",
+        owner: "Sanjay Mali",
+        ownerPhoto: "images/season1/owners/owner-10-sanjay-mali.webp",
+        logo: "images/season1/logos/logo-10-mali-kitchens.webp",
+        players: [],
+      },
+      {
+        id: "ambadas-khaire", color: "#6A1B9A",
+        name: "Ambadas Khaire", // team name & logo not provided yet
+        owner: "Ambadas Khaire",
+        ownerPhoto: "images/season1/owners/owner-11-ambadas-khaire.webp",
+        logo: "",
+        players: [],
       },
     ],
 
-    // Final standings – use the team "id" from the list above
-    standings: { // DUMMY
-      winner: "nashik-kings",
-      runnerUp: "panchavati-panthers",
-      third: "godavari-warriors",
-      fourth: "trimbak-titans",
+    // Final standings – use the team "id" from the list above.
+    // Leave "" until results are confirmed — the podium then shows "results coming soon".
+    standings: {
+      winner: "",
+      runnerUp: "",
+      third: "",
+      fourth: "",
     },
 
     // Player awards – team = team "id"; stat line is free text
-    awards: [ // DUMMY
-      { icon: "bat", title: { mr: "सर्वोत्कृष्ट फलंदाज", en: "Best Batter" }, player: "Akash Pawar", team: "nashik-kings",
+    awards: [ // DUMMY – replace with the real award winners (team = team id, or "")
+      { icon: "bat", title: { mr: "सर्वोत्कृष्ट फलंदाज", en: "Best Batter" }, player: "Akash Pawar", team: "",
         photo: "images/season1/awards/best-batter.jpg", stat: { mr: "५ सामने · २४८ धावा · स्ट्राइक रेट १८२", en: "5 matches · 248 runs · SR 182" } },
-      { icon: "ball", title: { mr: "सर्वोत्कृष्ट गोलंदाज", en: "Best Bowler" }, player: "Swapnil Gite", team: "panchavati-panthers",
+      { icon: "ball", title: { mr: "सर्वोत्कृष्ट गोलंदाज", en: "Best Bowler" }, player: "Swapnil Gite", team: "",
         photo: "images/season1/awards/best-bowler.jpg", stat: { mr: "१४ बळी · इकॉनॉमी ६.२ · सर्वोत्तम ४/१२", en: "14 wickets · Econ 6.2 · Best 4/12" } },
-      { icon: "hand", title: { mr: "सर्वोत्कृष्ट क्षेत्ररक्षक", en: "Best Fielder" }, player: "Aniket Sonawane", team: "godavari-warriors",
+      { icon: "hand", title: { mr: "सर्वोत्कृष्ट क्षेत्ररक्षक", en: "Best Fielder" }, player: "Aniket Sonawane", team: "",
         photo: "images/season1/awards/best-fielder.jpg", stat: { mr: "९ झेल · ३ धावबाद", en: "9 catches · 3 run-outs" } },
-      { icon: "star", title: { mr: "मालिकावीर (MVP)", en: "MVP" }, player: "Pankaj Hire", team: "trimbak-titans",
+      { icon: "star", title: { mr: "मालिकावीर (MVP)", en: "MVP" }, player: "Pankaj Hire", team: "",
         photo: "images/season1/awards/mvp.jpg", stat: { mr: "१८६ धावा · ८ बळी · ४ सामनावीर", en: "186 runs · 8 wickets · 4× Player of the Match" } },
     ],
 
@@ -407,6 +434,8 @@ window.SITE_CONFIG = {
     team: { mr: "संघ", en: "Team" },
     squad: { mr: "संघातील खेळाडू", en: "Squad" },
     playersUnit: { mr: "खेळाडू", en: "players" },
+    squadSoon: { mr: "संघातील खेळाडूंची यादी लवकरच अपडेट होईल.", en: "The squad list will be updated soon." },
+    resultsSoon: { mr: "पर्व १ चे अंतिम निकाल लवकरच अपडेट होतील.", en: "Season 1 final results will be updated soon." },
     logo: { mr: "लोगो", en: "logo" },
 
     standingsEyebrow: { mr: "निकाल", en: "Results" },
