@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>महात्मा ज्योतिराव फुले क्रिकेट चषक – पर्व ०२ - २०२७</title>
   <meta name="description" content="महात्मा ज्योतिराव फुले क्रिकेट चषक – पर्व ०२ (२०२७), नाशिक. Mahatma Jyotirao Phule Cricket Chashak Season 2 – 12 teams, 120 players, 9–10 January 2027 at Kridadham, Nashik. Register now!">
-  <meta name="theme-color" content="#052618">
+  <meta name="theme-color" content="#041632">
 
   <!-- ===== Open Graph: controls the WhatsApp / Facebook link preview =====
        If the site address changes (e.g. a custom domain), update og:url, og:image and the canonical link. -->
@@ -23,17 +23,18 @@
   <meta property="og:locale:alternate" content="en_IN">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="icon" href="images/theme/favicon-64.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="images/theme/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap">
+  <link rel="preload" as="image" href="images/theme/logo-emblem-600.webp" imagesrcset="images/theme/logo-emblem-600.webp 600w, images/theme/logo-emblem-1000.webp 989w" imagesizes="(min-width: 1024px) 430px, 78vw" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css?v=4">
 
   <script>document.documentElement.classList.add('js');</script>
-  <script src="js/config.js?v=3" defer></script>
-  <script src="js/app.js?v=3" defer></script>
+  <script src="js/config.js?v=4" defer></script>
+  <script src="js/app.js?v=4" defer></script>
 </head>
 <body>
   <a class="skip" href="#main" data-t="skip"></a>
@@ -82,19 +83,26 @@
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
     <symbol id="i-quote" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M3 21c3 0 7-1 7-8V5c0-1.25-.76-2-2-2H4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 0-1 1v2c0 1 0 1 1 1zM15 21c3 0 7-1 7-8V5c0-1.25-.76-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></symbol>
     <symbol id="i-nav" viewBox="0 0 24 24"><path d="m3 11 19-9-9 19-2-8z"/></symbol>
+    <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M19 8v6M16 11h6"/><circle cx="9" cy="7" r="4"/></symbol>
     <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 1.5c.5 4.9 2.1 8 7.5 10.5-5.4 2.5-7 5.6-7.5 10.5-.5-4.9-2.1-8-7.5-10.5C9.9 9.5 11.5 6.4 12 1.5z"/></symbol>
   </svg>
 
   <!-- ================= HEADER ================= -->
   <header class="hdr">
     <div class="hdr__inner">
-      <a class="brand" href="#season2" data-tab-link="season2">
-        <img class="brand__logo" data-logo src="images/logo.svg" alt="" width="40" height="40">
-        <span class="brand__text">
-          <strong data-t="@shortName"></strong>
-          <small data-t="@season"></small>
-        </span>
-      </a>
+      <div class="hdr__bar">
+        <a class="brand" href="#season2" data-tab-link="season2">
+          <img class="brand__logo" data-logo src="images/theme/logo-header.webp" alt="" width="192" height="183">
+          <span class="brand__text">
+            <strong data-brand-name></strong>
+            <small data-t="@season"></small>
+          </span>
+        </a>
+        <div class="lang" role="group" data-t-aria="language">
+          <button type="button" data-lang-btn="mr" lang="mr">मराठी</button>
+          <button type="button" data-lang-btn="en" lang="en">EN</button>
+        </div>
+      </div>
 
       <nav class="tabs" aria-label="Main">
         <a class="tab" href="#season2" data-tab-link="season2">
@@ -110,11 +118,6 @@
           <span><span data-t="navSeason1"></span><span class="tab__long" data-t="navSeason1Suffix"></span></span>
         </a>
       </nav>
-
-      <div class="lang" role="group" data-t-aria="language">
-        <button type="button" data-lang-btn="mr" lang="mr">मराठी</button>
-        <button type="button" data-lang-btn="en" lang="en">EN</button>
-      </div>
     </div>
   </header>
 
@@ -127,41 +130,42 @@
       <!-- HERO -->
       <section class="hero" id="home" aria-labelledby="heroTitle">
         <div class="hero__bg" aria-hidden="true"></div>
-        <div class="hero__grid" aria-hidden="true"></div>
-        <span class="blob blob--1" aria-hidden="true"></span>
-        <span class="blob blob--2" aria-hidden="true"></span>
-        <span class="blob blob--3" aria-hidden="true"></span>
-        <div class="hero__wm" aria-hidden="true"><span class="l-mr">०२</span><span class="l-en">02</span></div>
+        <div class="hero__fx" aria-hidden="true"></div>
 
         <div class="hero__inner">
-          <div class="hero__emblem" aria-hidden="true">
-            <img data-logo src="images/logo.svg" alt="" width="340" height="340" fetchpriority="high">
+          <div class="hero__emblem">
+            <img data-emblem-alt src="images/theme/logo-emblem-600.webp"
+                 srcset="images/theme/logo-emblem-600.webp 600w, images/theme/logo-emblem-1000.webp 989w"
+                 sizes="(min-width: 1024px) 430px, 78vw" width="989" height="945" alt="" fetchpriority="high">
           </div>
 
           <div class="hero__content">
-            <span class="pill-badge"><span class="pill-badge__dot"></span><span data-t="@badge"></span><span class="pill-badge__sep">•</span><span data-t="registrationOpen"></span></span>
-            <h1 id="heroTitle">
+            <h1 id="heroTitle" class="hero__title">
               <span class="l1" data-t="@nameLine1"></span>
               <span class="l2" data-t="@nameLine2"></span>
             </h1>
-            <div class="hero__season" data-t="@season"></div>
+            <div class="hero__accent" aria-hidden="true"></div>
+            <div class="hero__season-row"><span class="hero__season" data-t="@season"></span></div>
             <p class="hero__tagline" data-t="@tagline"></p>
+            <div class="gold-divider" aria-hidden="true"></div>
 
-            <div class="cd" id="countdown" data-state="running">
-              <p class="cd__label"><svg class="i" aria-hidden="true"><use href="#i-gavel"></use></svg><span></span></p>
-              <div class="cd__grid" role="timer">
+            <section class="cd" id="countdown" data-state="running" aria-labelledby="cdLabel">
+              <h2 class="cd__label" id="cdLabel"><svg class="i" aria-hidden="true"><use href="#i-gavel"></use></svg><span data-t="countdownAuction"></span></h2>
+              <div class="cd__grid" role="timer" aria-live="off">
                 <div class="cd__cell"><b class="cd__num">00</b><span class="cd__unit" data-t="days"></span></div>
                 <div class="cd__cell"><b class="cd__num">00</b><span class="cd__unit" data-t="hours"></span></div>
                 <div class="cd__cell"><b class="cd__num">00</b><span class="cd__unit" data-t="minutes"></span></div>
                 <div class="cd__cell"><b class="cd__num">00</b><span class="cd__unit" data-t="seconds"></span></div>
               </div>
               <p class="cd__msg"></p>
-            </div>
+              <p class="cd__sub"></p>
+            </section>
 
             <div class="hero__cta">
               <a class="btn btn--gold btn--lg" href="#" data-register>
-                <svg class="i" aria-hidden="true"><use href="#i-spark"></use></svg>
+                <svg class="i" aria-hidden="true"><use href="#i-user-plus"></use></svg>
                 <span data-t="registerNow"></span>
+                <svg class="i" aria-hidden="true"><use href="#i-right"></use></svg>
               </a>
               <a class="btn btn--ghost" href="#key-info">
                 <span data-t="viewDetails"></span>
@@ -233,12 +237,12 @@
       <section class="section section--light" id="contact">
         <div class="container">
           <div class="cta reveal">
-            <svg class="cta__ball" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ball"></use></svg>
             <h2 data-t="ctaTitle"></h2>
             <p data-t="ctaText"></p>
-            <a class="btn btn--dark btn--lg" href="#" data-register>
+            <a class="btn btn--gold btn--lg" href="#" data-register>
+              <svg class="i" aria-hidden="true"><use href="#i-user-plus"></use></svg>
               <span data-t="registerNow"></span>
-              <svg class="i" aria-hidden="true"><use href="#i-arrow"></use></svg>
+              <svg class="i" aria-hidden="true"><use href="#i-right"></use></svg>
             </a>
           </div>
 
@@ -258,7 +262,7 @@
 
       <!-- INTRO BANNER -->
       <section class="s1-hero" id="season1-story" aria-labelledby="s1Heading">
-        <div class="hero__grid" aria-hidden="true"></div>
+        <div class="hero__fx" aria-hidden="true"></div>
         <div class="s1-hero__inner">
           <div class="s1-hero__text">
             <span class="pill-badge"><svg class="i" aria-hidden="true"><use href="#i-star"></use></svg><span data-t="navSeason1"></span><span data-t="navSeason1Suffix"></span></span>
@@ -337,7 +341,7 @@
     <div class="ftr__grid">
       <div class="ftr__about">
         <div class="ftr__brand">
-          <img data-logo src="images/logo.svg" alt="" width="56" height="56" loading="lazy">
+          <img data-logo src="images/theme/logo-header.webp" alt="" width="192" height="183" loading="lazy">
           <div>
             <strong data-t="@name"></strong>
             <span data-t="@season"></span>

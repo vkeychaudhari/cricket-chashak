@@ -53,17 +53,17 @@
     const xml = esc;
     let svg;
     if (p.kind === 'logo') {
-      const c = p.color || '#167045';
+      const c = p.color || '#082B61';
       svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><radialGradient id="a" cx=".3" cy=".25" r=".95"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></radialGradient></defs><rect width="400" height="400" fill="${c}"/><rect width="400" height="400" fill="url(#a)"/><circle cx="200" cy="200" r="165" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="6" stroke-dasharray="14 10"/><text x="200" y="228" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-weight="800" font-size="${(p.initials || '').length > 2 ? 104 : 128}" fill="#fff">${xml(p.initials || '?')}</text><text x="200" y="292" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="30" letter-spacing="6" fill="#fff" fill-opacity=".85">LOGO</text></svg>`;
     } else {
-      const W = p.w || 800, H = p.h || 1000, c = p.color || '#167045';
+      const W = p.w || 800, H = p.h || 1000, c = p.color || '#082B61';
       const cx = W / 2, iy = H * 0.34, r = Math.min(W, H) * 0.17, sw = W * 0.012;
       const fs = Math.round(W * 0.042);
       const art = p.kind === 'person'
         ? `<circle cx="${cx}" cy="${iy - r * 0.3}" r="${r * 0.6}" fill="#fff" fill-opacity=".22"/><path d="M${cx - r * 1.2} ${iy + r * 1.35}a${r * 1.2} ${r * 1.05} 0 0 1 ${r * 2.4} 0z" fill="#fff" fill-opacity=".22"/>`
         : `<rect x="${cx - r}" y="${iy - r * 0.6}" width="${r * 2}" height="${r * 1.4}" rx="${r * 0.25}" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="${sw}"/><circle cx="${cx}" cy="${iy + r * 0.1}" r="${r * 0.38}" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="${sw}"/><rect x="${cx - r * 0.35}" y="${iy - r * 0.85}" width="${r * 0.7}" height="${r * 0.25}" rx="${r * 0.08}" fill="#fff" fill-opacity=".35"/>`;
       const ty = H * 0.68;
-      svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}"><defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c}"/><stop offset="1" stop-color="#03190f"/></linearGradient><pattern id="p" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M0 36L36 0" stroke="#fff" stroke-opacity=".05" stroke-width="2"/></pattern></defs><rect width="${W}" height="${H}" fill="url(#a)"/><rect width="${W}" height="${H}" fill="url(#p)"/>${art}<rect x="${W * 0.07}" y="${ty - fs * 1.7}" width="${W * 0.86}" height="${fs * 5.3}" rx="${fs * 0.6}" fill="#000" fill-opacity=".3" stroke="#f2c14e" stroke-opacity=".7" stroke-width="2" stroke-dasharray="10 7"/><text x="${cx}" y="${ty}" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="${fs}" fill="#fff">${xml(p.label)}</text><text x="${cx}" y="${ty + fs * 1.45}" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-weight="700" letter-spacing="3" font-size="${fs * 0.62}" fill="#f2c14e">REPLACE WITH FILE</text><text x="${cx}" y="${ty + fs * 2.65}" text-anchor="middle" font-family="Consolas,Menlo,monospace" font-size="${fs * 0.62}" fill="#fff" fill-opacity=".9">${xml(p.path || '')}</text></svg>`;
+      svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}"><defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c}"/><stop offset="1" stop-color="#020B20"/></linearGradient><pattern id="p" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M0 36L36 0" stroke="#fff" stroke-opacity=".05" stroke-width="2"/></pattern></defs><rect width="${W}" height="${H}" fill="url(#a)"/><rect width="${W}" height="${H}" fill="url(#p)"/>${art}<rect x="${W * 0.07}" y="${ty - fs * 1.7}" width="${W * 0.86}" height="${fs * 5.3}" rx="${fs * 0.6}" fill="#000" fill-opacity=".3" stroke="#f2c14e" stroke-opacity=".7" stroke-width="2" stroke-dasharray="10 7"/><text x="${cx}" y="${ty}" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="${fs}" fill="#fff">${xml(p.label)}</text><text x="${cx}" y="${ty + fs * 1.45}" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-weight="700" letter-spacing="3" font-size="${fs * 0.62}" fill="#f2c14e">REPLACE WITH FILE</text><text x="${cx}" y="${ty + fs * 2.65}" text-anchor="middle" font-family="Consolas,Menlo,monospace" font-size="${fs * 0.62}" fill="#fff" fill-opacity=".9">${xml(p.path || '')}</text></svg>`;
     }
     return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
   }
@@ -131,6 +131,20 @@
       el.setAttribute('data-aria-label-en', pick(v, 'en'));
     });
     $$('[data-logo]').forEach((el) => { if (C.tournament.logo) el.src = C.tournament.logo; });
+    // header name: first word white, the rest gold ("Phule Cricket Chashak")
+    const brandHtml = (l) => {
+      const [first, ...rest] = pick(C.tournament.shortName, l).split(' ');
+      return `${esc(first)}${rest.length ? ` <span class="accent">${esc(rest.join(' '))}</span>` : ''}`;
+    };
+    $$('[data-brand-name]').forEach((el) => {
+      el.innerHTML = `<span class="l-mr" lang="mr">${brandHtml('mr')}</span><span class="l-en" lang="en">${brandHtml('en')}</span>`;
+    });
+    const emblemAlt = both((l) => `${pick(C.tournament.name, l)} ${pick(label('logo'), l)}`);
+    $$('[data-emblem-alt]').forEach((el) => {
+      el.alt = pick(emblemAlt);
+      el.setAttribute('data-alt-mr', emblemAlt.mr);
+      el.setAttribute('data-alt-en', emblemAlt.en);
+    });
     $('#year').innerHTML = T(both((l) => digits(new Date().getFullYear(), l)));
     const org = C.tournament.organizer;
     if (org && pick(org)) {
@@ -149,10 +163,24 @@
     if (!box) return;
     const s = C.season2.schedule;
     const now = Date.now();
+    const auctionAt = s.auction.datetime ? toDate(s.auction.datetime) : null;
+
+    // auction date not announced yet: say so instead of counting to a made-up time
+    if (!auctionAt && toDate(s.tournamentStart).getTime() > now) {
+      if (box.dataset.state !== 'tba') {
+        box.dataset.state = 'tba';
+        cdKey = null;
+        $('.cd__label', box).innerHTML = icon('gavel') + `<span>${L('countdownAuction')}</span>`;
+        $('.cd__msg', box).innerHTML = L('countdownTba');
+        $('.cd__sub', box).innerHTML = `${L('tournamentDates')}: ${T(tournamentRange())}`;
+      }
+      return;
+    }
+
     const next = [
-      { at: toDate(s.auction.datetime), key: 'countdownAuction', icon: 'gavel' },
+      auctionAt && { at: auctionAt, key: 'countdownAuction', icon: 'gavel' },
       { at: toDate(s.tournamentStart), key: 'countdownStart', icon: 'ball' },
-    ].find((t) => t.at.getTime() > now);
+    ].filter(Boolean).find((t) => t.at.getTime() > now);
 
     if (next) {
       box.dataset.state = 'running';
@@ -170,8 +198,13 @@
     }
   }
 
+  function tournamentRange() {
+    const s = C.season2.schedule;
+    return both((l) => `${fmtDate(s.tournamentStart, l, { day: 'numeric' })} – ${fmtDate(s.final, l, { day: 'numeric', month: 'long', year: 'numeric' })}`);
+  }
+
   function renderTicker() {
-    const s2 = C.season2, s = s2.schedule;
+    const s2 = C.season2;
     const teams = s2.keyInfo.find((k) => k.icon === 'shield');
     const players = s2.keyInfo.find((k) => k.icon === 'users');
     const win = s2.prizes.team[0];
@@ -179,7 +212,7 @@
       C.tournament.badge,
       teams && both((l) => `${num(teams.value, l)} ${pick(teams.unit, l)}`),
       players && both((l) => `${num(players.value, l)} ${pick(players.unit, l)}`),
-      both((l) => `${fmtDate(s.tournamentStart, l, { day: 'numeric' })} – ${fmtDate(s.final, l, { day: 'numeric', month: 'long', year: 'numeric' })}`),
+      tournamentRange(),
       venue.city,
       win && both((l) => `${pick(win.title, l)} – ₹${num(win.amount, l)}`),
       label('registrationOpen'),
@@ -244,7 +277,7 @@
       return `${part} ${digits(`${h % 12 || 12}:${String(m).padStart(2, '0')}`, 'mr')} वाजता`;
     });
     const items = [
-      { key: 'auction', ic: 'gavel', date: s.auction.datetime, time: timeOf(s.auction.datetime), place: s.auction.venue },
+      { key: 'auction', ic: 'gavel', date: s.auction.datetime, time: s.auction.datetime && timeOf(s.auction.datetime), place: s.auction.venue },
       { key: 'tournamentStart', ic: 'flag', date: s.tournamentStart, time: s.startTime, place: venue.name },
       { key: 'final', ic: 'trophy', date: s.final, time: s.finalTime, place: venue.name, cls: 'tl--final' },
     ];
@@ -252,10 +285,10 @@
       <li class="tl reveal ${it.cls || ''}" style="--d:${i * 0.1}s">
         <span class="tl__node">${icon(it.ic)}</span>
         <p class="tl__tag">${L(it.key)}</p>
-        <p class="tl__date">${D(it.date, dateOpts)}</p>
+        <p class="tl__date">${it.date ? D(it.date, dateOpts) : L('countdownTba')}</p>
         <div class="tl__meta">
           ${it.time && pick(it.time) ? `<span>${icon('clock')}${T(it.time)}</span>` : ''}
-          ${it.place ? `<span>${icon('pin')}${T(it.place)}</span>` : ''}
+          ${it.place && pick(it.place) ? `<span>${icon('pin')}${T(it.place)}</span>` : ''}
         </div>
       </li>`).join('');
 
@@ -320,7 +353,7 @@
       <a class="dock__btn dock__btn--call" href="${phones[0] ? telHref(phones[0]) : '#'}" data-call>${icon('phone')}<span>${L('call')}</span></a>
       <a class="dock__btn dock__btn--wa" href="${esc(waHref)}" target="_blank" rel="noopener">${icon('whatsapp')}<span>WhatsApp</span></a>
       <a class="dock__btn dock__btn--ig" href="#" data-instagram>${icon('instagram')}<span>Instagram</span></a>
-      <a class="dock__btn dock__btn--reg" href="#" data-register>${icon('spark')}<span>${L('navRegister')}</span></a>`;
+      <a class="dock__btn dock__btn--reg" href="#" data-register>${icon('user-plus')}<span>${L('navRegister')}</span>${icon('right', 'dock__chev')}</a>`;
     const fab = $('#fabWa');
     fab.href = waHref;
     fab.setAttribute('aria-label', 'WhatsApp');
@@ -399,7 +432,7 @@
     $('#awardCards').innerHTML = (C.season1.awards || []).map((a, i) => {
       const t = teamById[a.team] || {};
       return `
-        <article class="award reveal" style="--d:${i * 0.08}s;--team:${esc(t.color || '#167045')}">
+        <article class="award reveal" style="--d:${i * 0.08}s;--team:${esc(t.color || '#075FC6')}">
           <div class="award__media">
             ${img(a.photo, { kind: 'person', label: `${pick(a.title, 'en')} photo`, color: t.color }, { alt: both((l) => `${pick(a.title, l)} – ${pick(a.player, l)}`) })}
             <span class="award__badge">${icon(a.icon || 'star')}${T(a.title)}</span>
@@ -417,7 +450,7 @@
   function renderGallery() {
     const pattern = ['big', '', '', 'tall', '', '', 'wide', '', 'tall', '', '', ''];
     galleryItems = (C.season1.gallery || []).map((g, i) => {
-      const ph = { kind: 'photo', label: `Season 1 photo ${i + 1}`, w: 1200, h: 800, color: i % 2 ? '#0f5434' : '#167045' };
+      const ph = { kind: 'photo', label: `Season 1 photo ${i + 1}`, w: 1200, h: 800, color: i % 2 ? '#0A3A7A' : '#075FC6' };
       return { src: g.src, caption: g.caption, html: img(g.src, ph, { alt: g.caption }), ph: PH.length - 1 };
     });
     $('#galleryGrid').innerHTML = galleryItems.map((g, i) => {

@@ -42,10 +42,12 @@ All the text, fees, dates, prizes, teams, players, quotes and links live in **`j
 - Text can be `"plain"` or bilingual: `{ mr: "मराठी", en: "English" }`.
 - Every line marked `// DUMMY` holds placeholder data. Replace it with the real values.
 - Dates use the `"YYYY-MM-DD"` format. The auction uses date + time: `"2026-12-20T18:00:00+05:30"`.
+- **Auction date:** while `season2.schedule.auction.datetime` is `""`, the hero shows "Date to be announced" (तारीख लवकरच जाहीर होईल). Fill it in and the live countdown starts automatically.
 - Keep the commas and quotes as they are. If the page goes blank after an edit, a comma or quote is usually missing.
 
 ### ⚠ Please check before publishing
-- **Prize amounts, auction date/time/venue, start/final timings**: all dummy.
+- **Auction date/time/venue**: empty until announced (shows "Date to be announced").
+- **Prize amounts, start/final timings**: dummy.
 - **Quotes**: the first two are well-known lines from Phule's writings. The 3rd and 4th are popular attributions/paraphrases. Please verify the wording.
 - **Season 1 teams, owners, players, standings, awards, highlights, story**: all dummy.
 
@@ -57,7 +59,11 @@ Until a photo file exists, the site shows a **labelled placeholder that names th
 
 ```
 images/
-├── logo.svg                      ← tournament logo (placeholder emblem; replace with official logo)
+├── theme/                        ← official logo + navy/gold theme artwork (already made, WebP)
+│   ├── logo-emblem-600.webp / logo-emblem-1000.webp   ← big hero emblem
+│   ├── logo-header.webp          ← small logo in header + footer
+│   ├── stadium-mobile.webp / stadium-desktop.webp     ← hero stadium backgrounds
+│   └── favicon-64.png, apple-touch-icon.png, particles.png, brush-strokes.svg, gold-divider.svg
 ├── phule-portrait.jpg            ← Mahatma Phule portrait (quotes section)
 ├── og-image.jpg                  ← WhatsApp preview picture (already made)
 └── season1/
@@ -70,7 +76,8 @@ images/
 Tips:
 - Keep photos small for fast loading on mobile: **under 300 KB each** (use https://squoosh.app to compress).
 - To use a different file name or format (e.g. `.png`), change the path in `js/config.js`.
-- If your logo is a PNG, set `tournament.logo: "images/logo.png"`.
+- To swap the logo, replace the files in `images/theme/` with the same names (WebP, transparent background), or change `tournament.logo` in `js/config.js` (header/footer) and the hero `<img>` paths in `index.html`.
+- Theme colours and fonts are at the top of `css/style.css` (`:root`). Fonts: Barlow Condensed (headlines), Inter (text), Noto Sans Devanagari (Marathi).
 - To add more teams or gallery photos, copy one block in `js/config.js` and edit it.
 
 ---

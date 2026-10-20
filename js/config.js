@@ -23,7 +23,7 @@ window.SITE_CONFIG = {
     season: { mr: "पर्व ०२ – २०२७", en: "Season 02 – 2027" },
     badge: { mr: "पर्व २", en: "Season 2" },
     tagline: { mr: "समतेचा खेळ, एकतेचा उत्सव!", en: "A game of equality, a celebration of unity!" },
-    logo: "images/logo.svg", // replace with your official logo (png/svg/jpg)
+    logo: "images/theme/logo-header.webp", // small logo (header + footer). The big hero emblem is images/theme/logo-emblem-*.webp
     organizer: { mr: "", en: "" }, // optional – e.g. { mr: "आयोजक मंडळ, नाशिक", en: "Organising Committee, Nashik" }
   },
 
@@ -75,8 +75,10 @@ window.SITE_CONFIG = {
 
     schedule: {
       auction: {
-        datetime: "2026-12-20T18:00:00+05:30", // DUMMY – auction date & time (countdown counts to this)
-        venue: { mr: "क्रीडाधाम प्रीमियम मल्टीस्पोर्ट क्लब, नाशिक", en: "Kridadham Premium Multisport Club, Nashik" }, // DUMMY
+        // Player auction date & time in India time, e.g. "2026-12-20T18:00:00+05:30".
+        // Leave "" until it is announced — the site then shows "Date to be announced" instead of a countdown.
+        datetime: "",
+        venue: "", // e.g. { mr: "…, नाशिक", en: "…, Nashik" } — leave "" until announced
       },
       tournamentStart: "2027-01-09",
       startTime: { mr: "सकाळी ८ वाजल्यापासून", en: "From 8:00 AM" }, // DUMMY
@@ -273,6 +275,8 @@ window.SITE_CONFIG = {
     countdownStart: { mr: "पहिल्या चेंडूसाठी उरलेला वेळ", en: "Countdown to the first ball" },
     countdownLive: { mr: "स्पर्धा सुरू आहे! 🏏", en: "The tournament is LIVE! 🏏" },
     countdownDone: { mr: "पर्व २ यशस्वी! सर्वांचे आभार 🙏", en: "Season 2 is complete — thank you! 🙏" },
+    countdownTba: { mr: "तारीख लवकरच जाहीर होईल", en: "Date to be announced" },
+    tournamentDates: { mr: "स्पर्धा", en: "Tournament" },
     days: { mr: "दिवस", en: "Days" },
     hours: { mr: "तास", en: "Hours" },
     minutes: { mr: "मिनिटे", en: "Mins" },

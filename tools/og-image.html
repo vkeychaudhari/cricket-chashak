@@ -4,40 +4,43 @@
 <html lang="mr">
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@600;700;800&family=Poppins:wght@600;700;800&display=block">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Inter:wght@600;700;800&family=Noto+Sans+Devanagari:wght@700;800&display=block">
 <style>
   html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
   body {
-    position: relative; font-family: "Mukta", sans-serif; color: #fff;
+    position: relative; font-family: "Inter", "Noto Sans Devanagari", sans-serif; color: #F9FAFF;
     background:
-      radial-gradient(55% 60% at 88% 10%, rgba(242,193,78,.32), transparent 62%),
-      radial-gradient(60% 70% at 0% 100%, rgba(31,143,88,.65), transparent 62%),
-      linear-gradient(160deg, #073020, #03190f);
+      linear-gradient(90deg, rgba(2, 11, 32, .35), rgba(2, 11, 32, .2) 40%, rgba(2, 11, 32, .55)),
+      linear-gradient(180deg, rgba(2, 11, 32, .2), rgba(2, 11, 32, .1) 55%, rgba(2, 11, 32, .9)),
+      url("../images/theme/stadium-desktop.webp") center 35% / cover no-repeat, #020B20;
   }
-  .grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 46px 46px; -webkit-mask-image: radial-gradient(ellipse at 60% 40%, #000 20%, transparent 75%); }
-  .wm { position: absolute; right: -20px; bottom: -90px; font: 800 440px/1 "Mukta"; color: transparent; -webkit-text-stroke: 2px rgba(242,193,78,.12); }
-  .wrap { position: relative; display: flex; align-items: center; gap: 56px; height: 100%; padding: 0 70px; }
-  .logo { width: 330px; height: 330px; flex: none; filter: drop-shadow(0 20px 40px rgba(0,0,0,.5)); }
-  .badge { display: inline-block; padding: 8px 20px; border-radius: 999px; background: rgba(242,193,78,.14); border: 1.5px solid rgba(242,193,78,.45); color: #fbe3a1; font-weight: 700; font-size: 26px; }
-  h1 { margin: 16px 0 0; font-weight: 800; line-height: 1.12; }
-  h1 .a { display: block; font-size: 52px; }
-  h1 .b { display: block; font-size: 96px; background: linear-gradient(100deg, #fff3c4, #f2c14e 45%, #e0a82e); -webkit-background-clip: text; color: transparent; }
-  .season { display: inline-block; margin-top: 10px; padding: 6px 22px; border-radius: 14px; border: 2px solid rgba(255,255,255,.3); font-weight: 700; font-size: 38px; }
-  .meta { margin-top: 22px; font: 600 27px/1.3 "Poppins"; color: rgba(255,255,255,.88); }
-  .meta b { color: #f2c14e; }
-  .strip { position: absolute; left: 0; right: 0; bottom: 0; height: 12px; background: linear-gradient(90deg, #e0a82e, #f2c14e, #e0a82e); }
+  .wrap { position: relative; display: flex; align-items: center; gap: 40px; height: 100%; padding: 0 64px 0 54px; }
+  .emblem { position: relative; width: 430px; flex: none; }
+  .emblem::before { content: ""; position: absolute; inset: 10% 8%; border-radius: 50%; background: rgba(255, 196, 67, .28); filter: blur(50px); z-index: -1; }
+  .emblem img { width: 100%; display: block; filter: drop-shadow(0 0 10px rgba(255, 197, 73, .4)) drop-shadow(0 14px 26px rgba(0, 0, 0, .55)); }
+  .text { flex: 1; text-align: center; }
+  .kicker { font-weight: 800; font-size: 21px; letter-spacing: .24em; padding-left: .24em; text-transform: uppercase; text-shadow: 0 2px 10px #030C19; }
+  h1 {
+    margin: 4px 0 0; font-family: "Barlow Condensed", sans-serif; font-weight: 900; font-size: 86px; line-height: .95; text-transform: uppercase; white-space: nowrap;
+    background: linear-gradient(180deg, #FFF3C2 0%, #FFD459 35%, #F2AC29 72%, #B96B04 100%); -webkit-background-clip: text; color: transparent;
+    -webkit-text-stroke: 1px rgba(129, 69, 6, .6); filter: drop-shadow(0 6px 2px rgba(0, 0, 0, .55));
+  }
+  .pill { display: inline-block; margin-top: 18px; padding: 8px 30px; border-radius: 999px; border: 2px solid #FFC443; background: rgba(2, 13, 34, .85); font-family: "Noto Sans Devanagari", sans-serif; font-weight: 800; font-size: 34px; }
+  .meta { margin-top: 20px; font-weight: 700; font-size: 26px; color: #F9FAFF; text-shadow: 0 2px 8px #010610; }
+  .meta b { color: #FFC443; }
+  .cta { display: inline-block; margin-top: 22px; padding: 12px 34px; border-radius: 16px; background: linear-gradient(110deg, #FFF1B9 0%, #FFD45D 37%, #F5AB20 100%); color: #041329; font-family: "Noto Sans Devanagari", "Inter", sans-serif; font-weight: 800; font-size: 28px; box-shadow: 0 6px 22px rgba(255, 191, 48, .35); }
+  .strip { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: linear-gradient(110deg, #FFF1B9, #FFD45D 37%, #F5AB20); }
 </style>
 </head>
 <body>
-  <div class="grid"></div>
-  <div class="wm">०२</div>
   <div class="wrap">
-    <img class="logo" src="../images/logo.svg" alt="">
-    <div>
-      <span class="badge">पर्व २ · नोंदणी सुरू!</span>
-      <h1><span class="a">महात्मा ज्योतिराव फुले</span><span class="b">क्रिकेट चषक</span></h1>
-      <span class="season">पर्व ०२ – २०२७</span>
+    <div class="emblem"><img src="../images/theme/logo-emblem-1000.webp" alt=""></div>
+    <div class="text">
+      <div class="kicker">Mahatma Jyotirao Phule</div>
+      <h1>Cricket Chashak</h1>
+      <div class="pill">पर्व ०२ – २०२७</div>
       <p class="meta">12 Teams <b>•</b> 120 Players <b>•</b> 9–10 Jan 2027 <b>•</b> Nashik</p>
+      <div class="cta">नोंदणी करा · Register Now</div>
     </div>
   </div>
   <div class="strip"></div>

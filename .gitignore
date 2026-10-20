@@ -6,3 +6,6 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# design source files (not part of the live site)
+Cricket_Chashak_Codex_Resource_Pack/
