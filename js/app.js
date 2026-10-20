@@ -359,6 +359,76 @@
     fab.setAttribute('aria-label', 'WhatsApp');
   }
 
+  /* ---------- sponsorship ---------- */
+  // last word in gold: "Contact for <Sponsorship>"
+  const accentLast = (v) => ['mr', 'en'].map((l) => {
+    const words = pick(v, l).split(' ');
+    const last = words.pop();
+    return `<span class="l-${l}" lang="${l}">${esc(words.join(' '))}${words.length ? ' ' : ''}<span class="accent">${esc(last)}</span></span>`;
+  }).join('');
+
+  function sponsorSlot(s, cls) {
+    if (s && s.logo) {
+      const inner = img(s.logo, { kind: 'photo', label: 'Sponsor logo', w: 800, h: 400 }, { alt: s.name || label('sponsorLogo') });
+      const cap = s.name ? `<span class="sp-logo__name">${T(s.name)}</span>` : '';
+      return s.url && !isPlaceholderUrl(s.url)
+        ? `<a class="sp-logo ${cls}" href="${esc(s.url)}" target="_blank" rel="noopener sponsored">${inner}${cap}</a>`
+        : `<div class="sp-logo ${cls}">${inner}${cap}</div>`;
+    }
+    return `<div class="sp-slot ${cls}">${icon('image')}<span>${L('yourBrandHere')}</span></div>`;
+  }
+
+  function renderSponsors() {
+    const S = C.sponsors;
+    if (!S) return;
+    const list = (items) => `<ul class="sp-list">${(items || []).map((b) => `<li>${icon('check', 'i-check')}<span>${T(b)}</span></li>`).join('')}</ul>`;
+    const head = (t) => `
+      <div class="sp-card__head">
+        <div class="sp-card__icon">${icon(t.icon)}</div>
+        <div><h3 class="sp-card__name">${T(t.name)}</h3><span class="sp-card__tag">${T(t.tag)}</span></div>
+      </div>`;
+    const tiers = S.tiers || [];
+    const featured = tiers.filter((t) => t.level === 'title').map((t) => `
+      <article class="sp-card sp-card--title reveal">
+        <div class="sp-card__in">
+          ${t.badge ? `<span class="sp-ribbon">${icon('star')}${T(t.badge)}</span>` : ''}
+          <svg class="sp-deco" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-trophy-fill"></use></svg>
+          <div class="sp-card__body">${head(t)}${list(t.benefits)}</div>
+          ${sponsorSlot(t.sponsor, 'sp-slot--lg')}
+        </div>
+      </article>`).join('');
+    const wide = tiers.filter((t) => t.level === 'co').map((t) => `
+      <article class="sp-card sp-card--co sp-card--${esc(t.accent || 'blue')} reveal">
+        <div class="sp-card__body">${head(t)}${list(t.benefits)}</div>
+        ${sponsorSlot(t.sponsor, 'sp-slot--md')}
+      </article>`).join('');
+    const support = tiers.filter((t) => t.level === 'support').map((t, i) => `
+      <article class="sp-card sp-card--support sp-card--${esc(t.accent || 'gold')} reveal" style="--d:${i * 0.08}s">
+        ${head(t)}${list(t.benefits)}
+        ${sponsorSlot(t.sponsor, 'sp-slot--sm')}
+      </article>`).join('');
+    $('#sponsorTiers').innerHTML = `${featured}${wide}${support ? `<div class="sp-trio">${support}</div>` : ''}`;
+
+    $('#sponsorAssoc').innerHTML = `
+      <div class="sp-assoc__text">
+        <h3>${accentLast(label('assocTitle'))}</h3>
+        <p>${L('assocText')}</p>
+      </div>
+      <div class="sp-assoc__slots">${(S.associates || []).map((a) => sponsorSlot(a, 'sp-slot--xs')).join('')}</div>`;
+
+    const wa = `https://wa.me/${cc}${S.phone}?text=${encodeURIComponent(S.whatsappMessage || '')}`;
+    $('#sponsor-contact').innerHTML = `
+      <svg class="sp-contact__ball" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ball"></use></svg>
+      <h3>${accentLast(label('sponsorContactTitle'))}</h3>
+      <p>${L('sponsorContactText')}</p>
+      <a class="sp-phone" href="${telHref(S.phone)}"><span class="sp-phone__icon">${icon('phone')}</span><span>${fmtPhone(S.phone)}</span></a>
+      <div class="sp-contact__btns">
+        <a class="btn btn--gold" href="${telHref(S.phone)}">${icon('phone')}<span>${L('callNow')}</span></a>
+        <a class="btn btn--wa" href="${esc(wa)}" target="_blank" rel="noopener">${icon('whatsapp')}<span>${L('whatsappEnquiry')}</span></a>
+      </div>
+      <small>${L('sponsorContactNote')}</small>`;
+  }
+
   /* =================================================================
      TAB 2 — SEASON 1
      ================================================================= */
@@ -782,6 +852,7 @@
   renderSchedule();
   renderQuotes();
   renderContact();
+  renderSponsors();
   renderSeason1Intro();
   renderTeams();
   renderPodium();

@@ -258,6 +258,84 @@ window.SITE_CONFIG = {
   },
 
   /* =================================================================
+     SPONSORSHIP — shown on the Season 2 page, before Contact
+     • To show a confirmed sponsor: put the logo file in images/sponsors/
+       and fill sponsor: { logo: "images/sponsors/abc.png", name: "ABC Ltd", url: "https://..." }
+       (name and url are optional).
+     • Leave logo "" to show the "Your Brand Here" slot.
+     • level: "title" = big featured card, "co" = wide card, "support" = 3-card row.
+     ================================================================= */
+  sponsors: {
+    phone: "9730024454",
+    whatsappMessage: "Hello, I am interested in sponsorship opportunities for Phule Cricket Chashak.",
+    tiers: [
+      {
+        level: "title", icon: "crown", accent: "gold",
+        name: { mr: "टायटल स्पॉन्सर", en: "Title Sponsor" },
+        tag: { mr: "प्रीमियम भागीदारी", en: "Premium Partnership" },
+        badge: { mr: "सर्वात प्रीमियम", en: "Most Premium" },
+        benefits: [
+          { mr: "संपूर्ण स्पर्धेत सर्वात ठळक ब्रँड दृश्यमानतेची संधी", en: "Opportunity for the most prominent brand visibility across the tournament" },
+          { mr: "जर्सी, बॅनर आणि डिजिटल प्रमोशनवर ब्रँडिंगची संधी", en: "Potential branding on jerseys, banners and digital promotions" },
+          { mr: "स्पर्धेतील महत्त्वाचे क्षण आणि घोषणांसोबत ब्रँडची ओळख", en: "Association with key tournament moments and announcements" },
+        ],
+        sponsor: { logo: "", name: "", url: "" },
+      },
+      {
+        level: "co", icon: "handshake", accent: "blue",
+        name: { mr: "को-स्पॉन्सर", en: "Co-Sponsor" },
+        tag: { mr: "ठळक ब्रँड प्रसिद्धी", en: "Strong Brand Exposure" },
+        benefits: [
+          { mr: "निवडक स्पर्धा साहित्यावर ठळक ब्रँडिंग", en: "Prominent branding across selected event assets" },
+          { mr: "मैदानावर आणि आमच्या डिजिटल माध्यमांवर दृश्यमानता", en: "Visibility at the ground and on our digital platforms" },
+          { mr: "खेळाडू, कुटुंबे आणि क्रिकेटप्रेमींशी थेट संपर्क", en: "Connect with players, families and cricket fans" },
+        ],
+        sponsor: { logo: "", name: "", url: "" },
+      },
+      {
+        level: "support", icon: "trophy", accent: "gold",
+        name: { mr: "ट्रॉफी स्पॉन्सर", en: "Trophy Sponsor" },
+        tag: { mr: "विजयासोबत तुमचा ब्रँड", en: "Brand on Glory" },
+        benefits: [
+          { mr: "चषक आणि बक्षीस वितरण सोहळ्याशी ब्रँडची जोड", en: "Brand association with the trophies and prize ceremony" },
+          { mr: "पुरस्कार वितरणादरम्यान ब्रँडिंगची संधी", en: "Branding opportunity during award distribution" },
+          { mr: "सोहळ्याच्या फोटो आणि व्हिडिओमध्ये दृश्यमानता", en: "Visibility in ceremony photos and videos" },
+        ],
+        sponsor: { logo: "", name: "", url: "" },
+      },
+      {
+        level: "support", icon: "shirt", accent: "blue",
+        name: { mr: "टी-शर्ट स्पॉन्सर", en: "T-Shirt Sponsor" },
+        tag: { mr: "प्रत्येक खेळाडूवर", en: "On Every Player" },
+        benefits: [
+          { mr: "अधिकृत स्पर्धा जर्सीवर लोगो (करारानुसार)", en: "Logo on official tournament jerseys, subject to agreement" },
+          { mr: "सामन्यांचे फोटो आणि सोशल मीडियाद्वारे दीर्घकाळ दृश्यमानता", en: "Lasting visibility through match photos and social media" },
+          { mr: "खेळाडू, समर्थक आणि प्रेक्षकांच्या नजरेत", en: "Seen by players, supporters and spectators" },
+        ],
+        sponsor: { logo: "", name: "", url: "" },
+      },
+      {
+        level: "support", icon: "food", accent: "orange",
+        name: { mr: "फूड पार्टनर", en: "Food Partner" },
+        tag: { mr: "खेळाला ऊर्जा", en: "Fuel the Game" },
+        benefits: [
+          { mr: "अल्पोपहार आणि आतिथ्य क्षेत्रात ब्रँडिंगची संधी", en: "Branding opportunities at refreshment and hospitality areas" },
+          { mr: "खेळाडूंचे जेवण आणि स्पर्धेतील आतिथ्याशी ब्रँडची जोड", en: "Association with player meals and event hospitality" },
+          { mr: "खेळाडू, कुटुंबे आणि प्रेक्षकांशी संपर्क", en: "Connect with players, families and spectators" },
+        ],
+        sponsor: { logo: "", name: "", url: "" },
+      },
+    ],
+    // Associate partner slots — add or remove entries freely
+    associates: [
+      { logo: "", name: "", url: "" },
+      { logo: "", name: "", url: "" },
+      { logo: "", name: "", url: "" },
+      { logo: "", name: "", url: "" },
+    ],
+  },
+
+  /* =================================================================
      UI TEXT (headings, buttons, labels)
      ================================================================= */
   labels: {
@@ -266,6 +344,8 @@ window.SITE_CONFIG = {
     navRegister: { mr: "नोंदणी", en: "Registration" },
     navSeason1: { mr: "पर्व १", en: "Season 1" },
     navSeason1Suffix: { mr: " यशोगाथा", en: " Success Story" },
+    navSponsors: { mr: "प्रायोजकत्व", en: "Sponsorship" },
+    navSponsorsShort: { mr: "प्रायोजक", en: "Sponsors" },
     language: { mr: "भाषा", en: "Language" },
 
     registerNow: { mr: "आत्ताच नोंदणी करा", en: "Register Now" },
@@ -346,6 +426,29 @@ window.SITE_CONFIG = {
     pause: { mr: "थांबवा", en: "Pause" },
     play: { mr: "सुरू करा", en: "Play" },
     slide: { mr: "स्लाइड", en: "Slide" },
+
+    sponsorsEyebrow: { mr: "प्रायोजकत्व", en: "Sponsorship" },
+    sponsorsTitle: { mr: "प्रायोजकत्वाच्या संधी", en: "Sponsorship Opportunities" },
+    sponsorsText: {
+      mr: "फुले क्रिकेट चषकासोबत भागीदारी करा आणि आपला ब्रँड खेळाडू, कुटुंबे, क्रिकेटप्रेमी आणि आमच्या ऑनलाइन समुदायापर्यंत पोहोचवा. आपल्या ब्रँडला साजेसा प्रायोजकत्व प्रकार निवडा.",
+      en: "Partner with Phule Cricket Chashak and showcase your brand to players, families, cricket enthusiasts and our online community. Choose a sponsorship category that suits your brand.",
+    },
+    becomeSponsor: { mr: "प्रायोजक व्हा", en: "Become a Sponsor" },
+    yourBrandHere: { mr: "तुमचा ब्रँड येथे", en: "Your Brand Here" },
+    sponsorLogo: { mr: "प्रायोजक लोगो", en: "Sponsor logo" },
+    assocTitle: { mr: "असोसिएट पार्टनर्स", en: "Associate Partners" },
+    assocText: {
+      mr: "मोलाच्या भागीदार परिवाराचा भाग व्हा आणि आपल्या परिसरातील तळागाळातील क्रिकेटला पाठबळ द्या.",
+      en: "Be part of a valued partner network and support grassroots cricket in your community.",
+    },
+    sponsorContactTitle: { mr: "प्रायोजकत्वासाठी संपर्क", en: "Contact for Sponsorship" },
+    sponsorContactText: {
+      mr: "चला, एक दमदार भागीदारी उभारूया. उपलब्ध प्रायोजकत्व संधींबद्दल जाणून घेण्यासाठी आमच्याशी संपर्क साधा.",
+      en: "Let's build a powerful partnership. Contact us to explore available sponsorship opportunities.",
+    },
+    sponsorContactNote: { mr: "प्रायोजकत्वाबद्दल चर्चा करण्यासाठी कॉल किंवा WhatsApp करा.", en: "Call or WhatsApp us to discuss sponsorship opportunities." },
+    callNow: { mr: "आत्ताच कॉल करा", en: "Call Now" },
+    whatsappEnquiry: { mr: "WhatsApp चौकशी", en: "WhatsApp Enquiry" },
 
     quickLinks: { mr: "दुवे", en: "Quick links" },
     contactHeading: { mr: "संपर्क", en: "Contact" },

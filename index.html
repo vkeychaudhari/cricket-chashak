@@ -30,11 +30,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap">
   <link rel="preload" as="image" href="images/theme/logo-emblem-600.webp" imagesrcset="images/theme/logo-emblem-600.webp 600w, images/theme/logo-emblem-1000.webp 989w" imagesizes="(min-width: 1024px) 430px, 78vw" fetchpriority="high">
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/style.css?v=5">
 
   <script>document.documentElement.classList.add('js');</script>
-  <script src="js/config.js?v=4" defer></script>
-  <script src="js/app.js?v=4" defer></script>
+  <script src="js/config.js?v=5" defer></script>
+  <script src="js/app.js?v=5" defer></script>
 </head>
 <body>
   <a class="skip" href="#main" data-t="skip"></a>
@@ -83,6 +83,11 @@
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
     <symbol id="i-quote" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M3 21c3 0 7-1 7-8V5c0-1.25-.76-2-2-2H4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 0-1 1v2c0 1 0 1 1 1zM15 21c3 0 7-1 7-8V5c0-1.25-.76-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></symbol>
     <symbol id="i-nav" viewBox="0 0 24 24"><path d="m3 11 19-9-9 19-2-8z"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h8"/></symbol>
+    <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></symbol>
+    <symbol id="i-food" viewBox="0 0 24 24"><path d="M3 20a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1zM20 16a8 8 0 1 0-16 0M12 4v4M10 4h4"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor" stroke="none"/><path d="m7.8 12.4 2.8 2.8 5.6-5.8" fill="none" stroke="#041329" stroke-width="2.4"/></symbol>
     <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M19 8v6M16 11h6"/><circle cx="9" cy="7" r="4"/></symbol>
     <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 1.5c.5 4.9 2.1 8 7.5 10.5-5.4 2.5-7 5.6-7.5 10.5-.5-4.9-2.1-8-7.5-10.5C9.9 9.5 11.5 6.4 12 1.5z"/></symbol>
   </svg>
@@ -111,11 +116,15 @@
         </a>
         <a class="tab tab--reg" href="#" data-register>
           <span data-t="navRegister"></span>
-          <svg class="i" aria-hidden="true"><use href="#i-external"></use></svg>
+          <svg class="i i-ext" aria-hidden="true"><use href="#i-external"></use></svg>
         </a>
         <a class="tab" href="#season1" data-tab-link="season1">
           <svg class="i" aria-hidden="true"><use href="#i-star"></use></svg>
           <span><span data-t="navSeason1"></span><span class="tab__long" data-t="navSeason1Suffix"></span></span>
+        </a>
+        <a class="tab" href="#sponsors">
+          <svg class="i" aria-hidden="true"><use href="#i-handshake"></use></svg>
+          <span class="tab__short" data-t="navSponsorsShort"></span><span class="tab__full" data-t="navSponsors"></span>
         </a>
       </nav>
     </div>
@@ -230,6 +239,25 @@
               <div class="car-ctrl" data-controls></div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- SPONSORSHIP (cards + contact rendered from config.sponsors) -->
+      <section class="section section--sponsors" id="sponsors" aria-labelledby="sponsorsTitle">
+        <div class="container">
+          <header class="sec-head reveal">
+            <span class="eyebrow" data-t="sponsorsEyebrow"></span>
+            <h2 id="sponsorsTitle" data-t="sponsorsTitle"></h2>
+            <p class="sp-intro" data-t="sponsorsText"></p>
+            <a class="btn btn--gold sp-head__cta" href="#sponsor-contact">
+              <svg class="i" aria-hidden="true"><use href="#i-handshake"></use></svg>
+              <span data-t="becomeSponsor"></span>
+              <svg class="i" aria-hidden="true"><use href="#i-right"></use></svg>
+            </a>
+          </header>
+          <div class="sp-grid" id="sponsorTiers"></div>
+          <div class="sp-assoc reveal" id="sponsorAssoc"></div>
+          <div class="sp-contact reveal" id="sponsor-contact"></div>
         </div>
       </section>
 
@@ -357,6 +385,7 @@
           <li><a href="#" data-register data-t="navRegister"></a></li>
           <li><a href="#season1" data-tab-link="season1"><span data-t="navSeason1"></span><span data-t="navSeason1Suffix"></span></a></li>
           <li><a href="#schedule" data-t="scheduleEyebrow"></a></li>
+          <li><a href="#sponsors" data-t="navSponsors"></a></li>
         </ul>
       </div>
       <div>

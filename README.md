@@ -36,6 +36,7 @@ All the text, fees, dates, prizes, teams, players, quotes and links live in **`j
 | Final standings (podium) | `season1.standings` |
 | Player awards | `season1.awards` |
 | Gallery photos and captions | `season1.gallery` |
+| **Sponsorship cards, sponsor logos, sponsorship phone / WhatsApp message** | `sponsors` |
 | Headings, button text | `labels` |
 
 **Rules:**
@@ -44,6 +45,15 @@ All the text, fees, dates, prizes, teams, players, quotes and links live in **`j
 - Dates use the `"YYYY-MM-DD"` format. The auction uses date + time: `"2026-12-20T18:00:00+05:30"`.
 - **Auction date:** while `season2.schedule.auction.datetime` is `""`, the hero shows "Date to be announced" (तारीख लवकरच जाहीर होईल). Fill it in and the live countdown starts automatically.
 - Keep the commas and quotes as they are. If the page goes blank after an edit, a comma or quote is usually missing.
+
+### Adding a sponsor
+1. Save the sponsor's logo in `images/sponsors/` (PNG/WebP with a transparent or white background, about 800×400, under 200 KB).
+2. In `js/config.js` → `sponsors`, find the category and fill its `sponsor`:
+   ```js
+   sponsor: { logo: "images/sponsors/abc.png", name: "ABC Ltd", url: "https://abc.example" },
+   ```
+   `name` and `url` are optional (with a `url` the logo becomes a link). Associate partners are the `associates` list — add or remove entries freely.
+3. Leave `logo: ""` to keep showing the "Your Brand Here" slot. If the logo file path is wrong, a labelled placeholder shows which file is missing.
 
 ### ⚠ Please check before publishing
 - **Auction date/time/venue**: empty until announced (shows "Date to be announced").
