@@ -45,6 +45,8 @@
 
   const icon = (name, cls) => `<svg class="i${cls ? ' ' + cls : ''}" aria-hidden="true"><use href="#i-${name}"></use></svg>`;
   const initials = (t) => pick(t.name, 'en').split(/\s+/).filter(Boolean).map((w) => w[0]).join('').slice(0, 3).toUpperCase();
+  // optional per-team logo plate colour (for logos drawn on a dark background)
+  const logoBg = (t) => (t.logoBg ? ` style="--logo-bg:${esc(t.logoBg)}"` : '');
   const teamById = Object.fromEntries((C.season1.teams || []).map((t) => [t.id, t]));
 
   /* ---------- labelled placeholder images ---------- */
@@ -452,7 +454,7 @@
           </div>
           <div class="tcard__body">
             <div class="tcard__head">
-              <div class="tcard__logo">${img(t.logo, { kind: 'logo', initials: initials(t), color: t.color }, { alt: both((l) => `${pick(t.name, l)} ${pick(label('logo'), l)}`) })}</div>
+              <div class="tcard__logo"${logoBg(t)}>${img(t.logo, { kind: 'logo', initials: initials(t), color: t.color }, { alt: both((l) => `${pick(t.name, l)} ${pick(label('logo'), l)}`) })}</div>
               <div><span class="tcard__kicker">${L('team')}</span><h3 class="tcard__team">${T(t.name)}</h3></div>
             </div>
             <div class="tcard__bar"></div>
@@ -491,7 +493,7 @@
         <div class="pod pod--${p} reveal" style="--d:${p === 1 ? 0 : p === 2 ? 0.15 : 0.3}s;--ring:${esc(t.color)}">
           ${p === 1 ? sparkles : ''}
           ${ic}
-          <div class="pod__logo">${logo(t)}</div>
+          <div class="pod__logo"${logoBg(t)}>${logo(t)}</div>
           <h3 class="pod__team">${T(t.name)}</h3>
           <p class="pod__owner">${T(t.owner)}</p>
           <span class="pod__label">${L(names[p])}</span>
@@ -503,7 +505,7 @@
     $('#podium4').innerHTML = t4 ? `
       <div class="pod4 reveal" style="--ring:${esc(t4.color)}">
         <span class="medal medal--4">${N(4)}</span>
-        <div class="pod4__logo">${logo(t4)}</div>
+        <div class="pod4__logo"${logoBg(t4)}>${logo(t4)}</div>
         <div class="pod4__info"><strong>${T(t4.name)}</strong><span>${T(t4.owner)}</span></div>
         <span class="pod4__tag">${L('fourth')}</span>
       </div>` : '';

@@ -152,6 +152,7 @@ window.SITE_CONFIG = {
        id: short unique name (used by standings & awards below)
        name: team name (teams without a confirmed name currently show the owner's brand)
        brand: optional – owner's business, shown under the owner's name
+       logoBg: optional – logo plate colour for logos drawn on a dark background (e.g. "#000000")
        color: team colour (hex) – used for accents & logo placeholder
        ownerPhoto / logo: image paths (add the files to the images folder)
        players: list of names – plain "Name" or { mr: "नाव", en: "Name" }.
@@ -185,12 +186,13 @@ window.SITE_CONFIG = {
         players: ["Shlok", "Vaibhav", "Atharva", "Pinu K.", "Amol", "Om", "Vedant", "Kunal", "Vedant", "Milan", "Yash", "Vaibhav"],
       },
       {
-        id: "vazcon-realty", color: "#E06A1B",
-        name: "Vazcon Realty",
-        owner: "Tejas Vazare",
-        ownerPhoto: "images/season1/owners/owner-04-tejas-vazare.webp",
-        logo: "images/season1/logos/logo-04-vazcon-realty.webp",
-        players: [],
+        id: "mahatma-phule-blasters", color: "#E64A19",
+        name: { mr: "महात्मा फुले ब्लास्टर्स", en: "Mahatma Phule Blasters" },
+        owner: "Kishan Mahajan & Tejas Vazare",
+        brand: "The Suki Media & Vazcon Realty",
+        ownerPhoto: "images/season1/owners/owner-04-kishan-mahajan-tejas-vazare.webp",
+        logo: "images/season1/logos/team-04-mahatma-phule-blasters.webp",
+        players: ["Kiran", "Yogesh", "Rohit", "Sahil", "Sharway", "Tanmay", "DK", "Pranav", "Sanket", "Sachinn", "Pratik"],
       },
       {
         id: "krantisurya-knight-riders", color: "#B26A00",
@@ -211,14 +213,6 @@ window.SITE_CONFIG = {
         players: ["Saukhya", "Punarva", "Rohit", "Aniket", "Ram", "Pramod", "KK", "Yash", "Aditya", "Sarthak", "Tejas"],
       },
       {
-        id: "the-suki-media", color: "#E53935",
-        name: "The Suki Media",
-        owner: "Kishan Mahajan",
-        ownerPhoto: "images/season1/owners/owner-07-kishan-mahajan.webp",
-        logo: "images/season1/logos/logo-07-the-suki-media.webp",
-        players: [],
-      },
-      {
         id: "satyashodhak-lions", color: "#9C5A1A",
         name: { mr: "सत्यशोधक लायन्स", en: "Satyashodhak Lions" },
         owner: "Jaywant Jejurkar",
@@ -228,28 +222,39 @@ window.SITE_CONFIG = {
         players: ["Shashi", "Vishal", "Kushal", "Nilesh", "Bhushan", "Vicky", "Prathmesh", "Rahul", "Gokul", "Mahesh", "Amol"],
       },
       {
-        id: "data-engineer", color: "#0B2A6F",
-        name: "Data Engineer",
+        id: "jotirao-challengers", color: "#1565C0",
+        name: { mr: "जोतीराव चॅलेंजर्स", en: "Jotirao Challengers" },
         owner: "Satish Gaikwad",
+        brand: "Data Engineer",
         ownerPhoto: "images/season1/owners/owner-09-satish-gaikwad.webp",
-        logo: "images/season1/logos/logo-09-data-engineer.webp",
-        players: [],
+        logo: "images/season1/logos/team-09-jotirao-challengers.webp",
+        logoBg: "#000000", // logo artwork has a black background
+        players: ["Akki", "GG", "Appa", "Aadee", "Sahil", "Chiku", "Pahadi", "Vijay", "Pravin", "Yogesh", "Pranesh", "Digvijay"],
       },
       {
-        id: "mali-kitchens", color: "#EF6C00",
-        name: "Mali Kitchens",
+        id: "phule-supergiants", color: "#AD1457",
+        name: { mr: "फुले सुपरजायंट्स", en: "Phule Supergiants" },
         owner: "Sanjay Mali",
+        brand: "Mali Kitchens",
         ownerPhoto: "images/season1/owners/owner-10-sanjay-mali.webp",
-        logo: "images/season1/logos/logo-10-mali-kitchens.webp",
-        players: [],
+        logo: "images/season1/logos/team-10-phule-supergiants.webp",
+        players: ["Yash", "Tanmay", "Prasad", "Viju", "Saurabh", "Ajay", "Sanskar", "Ajay", "Suhas", "Rohit", "Kailas"],
       },
       {
-        id: "ambadas-khaire", color: "#6A1B9A",
-        name: "Ambadas Khaire", // team name & logo not provided yet
+        id: "jotirao-royals", color: "#A15C00",
+        name: { mr: "जोतीराव रॉयल्स", en: "Jotirao Royals" },
         owner: "Ambadas Khaire",
         ownerPhoto: "images/season1/owners/owner-11-ambadas-khaire.webp",
-        logo: "",
-        players: [],
+        logo: "images/season1/logos/team-11-jotirao-royals.webp",
+        players: ["Gaurav", "Shrikant", "KJ", "Rutik", "Aditya", "Vijay", "Prathm", "Chinmay", "Nitin", "Girish", "Vinayak", "Ajay"],
+      },
+      {
+        id: "kranti-warriors", color: "#9A2A1E",
+        name: { mr: "क्रांति वॉरियर्स", en: "Kranti Warriors" },
+        owner: "Nitin Mahajan",
+        ownerPhoto: "images/season1/owners/owner-12-nitin-mahajan.webp",
+        logo: "images/season1/logos/team-12-kranti-warriors.webp",
+        players: ["Bhushan", "Bhushan", "Swapnil", "Harshal", "Jayesh", "Chetan", "Ravindra", "Sarwesh", "Hemant", "Bharat", "Manav", "Tejas"],
       },
     ],
 
