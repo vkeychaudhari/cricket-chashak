@@ -133,11 +133,8 @@
       el.setAttribute('data-aria-label-en', pick(v, 'en'));
     });
     $$('[data-logo]').forEach((el) => { if (C.tournament.logo) el.src = C.tournament.logo; });
-    // header name: first word white, the rest gold ("Phule Cricket Chashak")
-    const brandHtml = (l) => {
-      const [first, ...rest] = pick(C.tournament.shortName, l).split(' ');
-      return `${esc(first)}${rest.length ? ` <span class="accent">${esc(rest.join(' '))}</span>` : ''}`;
-    };
+    // header name on two lines: "Mahatma Jotirao Phule" (white) over "Cricket Chashak" (gold)
+    const brandHtml = (l) => `<span class="bn1">${esc(pick(C.tournament.nameLine1, l))}</span><span class="bn2 accent">${esc(pick(C.tournament.nameLine2, l))}</span>`;
     $$('[data-brand-name]').forEach((el) => {
       el.innerHTML = `<span class="l-mr" lang="mr">${brandHtml('mr')}</span><span class="l-en" lang="en">${brandHtml('en')}</span>`;
     });

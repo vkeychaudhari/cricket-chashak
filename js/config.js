@@ -19,7 +19,7 @@ window.SITE_CONFIG = {
     name: { mr: "महात्मा जोतीराव फुले क्रिकेट चषक", en: "Mahatma Jotirao Phule Cricket Chashak" },
     nameLine1: { mr: "महात्मा जोतीराव फुले", en: "Mahatma Jotirao Phule" },
     nameLine2: { mr: "क्रिकेट चषक", en: "Cricket Chashak" },
-    shortName: { mr: "फुले क्रिकेट चषक", en: "Phule Cricket Chashak" },
+    shortName: { mr: "महात्मा जोतीराव फुले क्रिकेट चषक", en: "Mahatma Jotirao Phule Cricket Chashak" },
     season: { mr: "पर्व ०२ – २०२७", en: "Season 02 – 2027" },
     badge: { mr: "पर्व २", en: "Season 2" },
     tagline: { mr: "समतेचा खेळ, एकतेचा उत्सव!", en: "A game of equality, a celebration of unity!" },
@@ -309,7 +309,7 @@ window.SITE_CONFIG = {
      ================================================================= */
   sponsors: {
     phone: "9730024454",
-    whatsappMessage: "Hello, I am interested in sponsorship opportunities for Phule Cricket Chashak.",
+    whatsappMessage: "Hello, I am interested in sponsorship opportunities for Mahatma Jotirao Phule Cricket Chashak.",
     tiers: [
       {
         level: "title", icon: "crown", accent: "gold",
@@ -476,8 +476,8 @@ window.SITE_CONFIG = {
     sponsorsEyebrow: { mr: "प्रायोजकत्व", en: "Sponsorship" },
     sponsorsTitle: { mr: "प्रायोजकत्वाच्या संधी", en: "Sponsorship Opportunities" },
     sponsorsText: {
-      mr: "फुले क्रिकेट चषकासोबत भागीदारी करा आणि आपला ब्रँड खेळाडू, कुटुंबे, क्रिकेटप्रेमी आणि आमच्या ऑनलाइन समुदायापर्यंत पोहोचवा. आपल्या ब्रँडला साजेसा प्रायोजकत्व प्रकार निवडा.",
-      en: "Partner with Phule Cricket Chashak and showcase your brand to players, families, cricket enthusiasts and our online community. Choose a sponsorship category that suits your brand.",
+      mr: "महात्मा जोतीराव फुले क्रिकेट चषकासोबत भागीदारी करा आणि आपला ब्रँड खेळाडू, कुटुंबे, क्रिकेटप्रेमी आणि आमच्या ऑनलाइन समुदायापर्यंत पोहोचवा. आपल्या ब्रँडला साजेसा प्रायोजकत्व प्रकार निवडा.",
+      en: "Partner with Mahatma Jotirao Phule Cricket Chashak and showcase your brand to players, families, cricket enthusiasts and our online community. Choose a sponsorship category that suits your brand.",
     },
     becomeSponsor: { mr: "प्रायोजक व्हा", en: "Become a Sponsor" },
     yourBrandHere: { mr: "तुमचा ब्रँड येथे", en: "Your Brand Here" },
