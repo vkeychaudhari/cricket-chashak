@@ -1,6 +1,6 @@
 /* =====================================================================
    SITE CONFIG — EDIT EVERYTHING HERE
-   महात्मा ज्योतिराव फुले क्रिकेट चषक – पर्व ०२ - २०२७
+   महात्मा जोतीराव फुले क्रिकेट चषक – पर्व ०२ - २०२७
    ---------------------------------------------------------------------
    • Text can be a plain string            "Text"
      or bilingual                          { mr: "मराठी", en: "English" }
@@ -16,8 +16,8 @@ window.SITE_CONFIG = {
 
   /* ---------- Tournament identity ---------- */
   tournament: {
-    name: { mr: "महात्मा ज्योतिराव फुले क्रिकेट चषक", en: "Mahatma Jyotirao Phule Cricket Chashak" },
-    nameLine1: { mr: "महात्मा ज्योतिराव फुले", en: "Mahatma Jyotirao Phule" },
+    name: { mr: "महात्मा जोतीराव फुले क्रिकेट चषक", en: "Mahatma Jotirao Phule Cricket Chashak" },
+    nameLine1: { mr: "महात्मा जोतीराव फुले", en: "Mahatma Jotirao Phule" },
     nameLine2: { mr: "क्रिकेट चषक", en: "Cricket Chashak" },
     shortName: { mr: "फुले क्रिकेट चषक", en: "Phule Cricket Chashak" },
     season: { mr: "पर्व ०२ – २०२७", en: "Season 02 – 2027" },
@@ -59,17 +59,19 @@ window.SITE_CONFIG = {
     ],
 
     prizes: {
-      team: [ // amounts in ₹ (numbers only)
-        { place: 1, title: { mr: "विजेता", en: "Winner" }, amount: 51000, extra: { mr: "+ भव्य चषक", en: "+ Champions Trophy" } },   // DUMMY amount
-        { place: 2, title: { mr: "उपविजेता", en: "Runner-up" }, amount: 31000, extra: { mr: "+ चषक", en: "+ Trophy" } },          // DUMMY amount
-        { place: 3, title: { mr: "तृतीय क्रमांक", en: "3rd Place" }, amount: 21000, extra: { mr: "+ चषक", en: "+ Trophy" } },     // DUMMY amount
-        { place: 4, title: { mr: "चतुर्थ क्रमांक", en: "4th Place" }, amount: 11000, extra: { mr: "+ चषक", en: "+ Trophy" } },    // DUMMY amount
+      // Prize money is not announced yet: amount: null hides it and shows "to be announced".
+      // To publish, replace null with the amount in rupees (numbers only, no commas)
+      team: [
+        { place: 1, title: { mr: "विजेता", en: "Winner" }, amount: null, extra: { mr: "+ भव्य चषक", en: "+ Champions Trophy" } },
+        { place: 2, title: { mr: "उपविजेता", en: "Runner-up" }, amount: null, extra: { mr: "+ चषक", en: "+ Trophy" } },
+        { place: 3, title: { mr: "तृतीय क्रमांक", en: "3rd Place" }, amount: null, extra: { mr: "+ चषक", en: "+ Trophy" } },
+        { place: 4, title: { mr: "चतुर्थ क्रमांक", en: "4th Place" }, amount: null, extra: { mr: "+ चषक", en: "+ Trophy" } },
       ],
       individual: [
-        { icon: "bat", title: { mr: "सर्वोत्कृष्ट फलंदाज", en: "Best Batter" }, amount: 5001, extra: { mr: "+ चषक", en: "+ Trophy" } },      // DUMMY
-        { icon: "ball", title: { mr: "सर्वोत्कृष्ट गोलंदाज", en: "Best Bowler" }, amount: 5001, extra: { mr: "+ चषक", en: "+ Trophy" } },     // DUMMY
-        { icon: "hand", title: { mr: "सर्वोत्कृष्ट क्षेत्ररक्षक", en: "Best Fielder" }, amount: 3001, extra: { mr: "+ चषक", en: "+ Trophy" } }, // DUMMY
-        { icon: "star", title: { mr: "मालिकावीर (MVP)", en: "MVP – Player of the Series" }, amount: 7001, extra: { mr: "+ चषक", en: "+ Trophy" } }, // DUMMY
+        { icon: "bat", title: { mr: "सर्वोत्कृष्ट फलंदाज", en: "Best Batter" }, amount: null, extra: { mr: "+ चषक", en: "+ Trophy" } },
+        { icon: "ball", title: { mr: "सर्वोत्कृष्ट गोलंदाज", en: "Best Bowler" }, amount: null, extra: { mr: "+ चषक", en: "+ Trophy" } },
+        { icon: "hand", title: { mr: "सर्वोत्कृष्ट क्षेत्ररक्षक", en: "Best Fielder" }, amount: null, extra: { mr: "+ चषक", en: "+ Trophy" } },
+        { icon: "star", title: { mr: "मालिकावीर (MVP)", en: "MVP – Player of the Series" }, amount: null, extra: { mr: "+ चषक", en: "+ Trophy" } },
       ],
     },
 
@@ -89,7 +91,7 @@ window.SITE_CONFIG = {
     venue: {
       name: { mr: "क्रीडाधाम प्रीमियम मल्टीस्पोर्ट क्लब", en: "Kridadham Premium Multisport Club" },
       address: {
-        mr: "जयभावे फार्म, गुरु गोविंद सिंग कॉलेजजवळ, इंदिरा नगर, नाशिक",
+        mr: "जायभावे फार्म, गुरु गोविंद सिंग कॉलेजजवळ, इंदिरा नगर, नाशिक",
         en: "Jaybhave Farm, Near Guru Gobind Singh College, Indira Nagar, Nashik",
       },
       city: { mr: "नाशिक", en: "Nashik" },
@@ -132,8 +134,8 @@ window.SITE_CONFIG = {
     // DUMMY draft – edit freely
     story: [
       {
-        mr: "२०२६ मध्ये नाशिकच्या मातीत एका नव्या क्रिकेट परंपरेचा जन्म झाला. महात्मा ज्योतिराव फुले क्रिकेट चषकाच्या पहिल्या पर्वात ११ संघ मैदानात उतरले आणि प्रेक्षकांच्या उदंड प्रतिसादात समता, बंधुता आणि खिलाडूवृत्तीचा खरा उत्सव साजरा झाला.",
-        en: "In 2026, a new cricket tradition was born on the grounds of Nashik. The first season of the Mahatma Jyotirao Phule Cricket Chashak brought 11 teams onto the field, cheered on by passionate crowds, in a true celebration of equality, brotherhood and sportsmanship.",
+        mr: "२०२६ मध्ये नाशिकच्या मातीत एका नव्या क्रिकेट परंपरेचा जन्म झाला. महात्मा जोतीराव फुले क्रिकेट चषकाच्या पहिल्या पर्वात ११ संघ मैदानात उतरले आणि प्रेक्षकांच्या उदंड प्रतिसादात समता, बंधुता आणि खिलाडूवृत्तीचा खरा उत्सव साजरा झाला.",
+        en: "In 2026, a new cricket tradition was born on the grounds of Nashik. The first season of the Mahatma Jotirao Phule Cricket Chashak brought 11 teams onto the field, cheered on by passionate crowds, in a true celebration of equality, brotherhood and sportsmanship.",
       },
       {
         mr: "प्रत्येक चौकार, प्रत्येक बळी आणि प्रत्येक झेलाने एकच संदेश दिला — मैदानात सगळे समान! पहिल्या पर्वाच्या या सुवर्ण आठवणी आता पर्व २ साठी नवी प्रेरणा आहेत.",
@@ -409,6 +411,8 @@ window.SITE_CONFIG = {
     prizesTitle: { mr: "विजयासाठी भव्य बक्षिसे", en: "Play for glory & big prizes" },
     individualAwards: { mr: "वैयक्तिक पुरस्कार", en: "Individual awards" },
     winnerPrize: { mr: "विजेत्याला", en: "for the winner" },
+    prizeTba: { mr: "बक्षीस रक्कम लवकरच जाहीर होईल", en: "Prize money to be announced soon" },
+    prizesNote: { mr: "विजेत्या संघांना आणि खेळाडूंना चषक. बक्षिसांची रक्कम लवकरच जाहीर केली जाईल.", en: "Trophies for the winning teams and players. Prize money will be announced soon." },
 
     scheduleEyebrow: { mr: "वेळापत्रक", en: "Schedule" },
     scheduleTitle: { mr: "लिलाव आणि स्पर्धेचे वेळापत्रक", en: "Auction & tournament schedule" },
@@ -421,7 +425,7 @@ window.SITE_CONFIG = {
 
     quotesEyebrow: { mr: "प्रेरणा", en: "Inspiration" },
     quotesTitle: { mr: "महात्मा फुले यांचे विचार", en: "Words of Mahatma Phule" },
-    portraitCaption: { mr: "महात्मा ज्योतिराव फुले", en: "Mahatma Jyotirao Phule" },
+    portraitCaption: { mr: "महात्मा जोतीराव फुले", en: "Mahatma Jotirao Phule" },
     portraitYears: { mr: "१८२७ – १८९०", en: "1827 – 1890" },
 
     ctaTitle: { mr: "मैदान तुमची वाट पाहतंय!", en: "The field is waiting for you!" },

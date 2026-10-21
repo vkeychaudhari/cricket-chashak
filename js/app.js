@@ -1,5 +1,5 @@
 /* =====================================================================
-   Mahatma Jyotirao Phule Cricket Chashak — site script
+   Mahatma Jotirao Phule Cricket Chashak — site script
    All content comes from js/config.js (window.SITE_CONFIG).
    ===================================================================== */
 (function () {
@@ -216,7 +216,7 @@
       players && both((l) => `${num(players.value, l)} ${pick(players.unit, l)}`),
       tournamentRange(),
       venue.city,
-      win && both((l) => `${pick(win.title, l)} – ₹${num(win.amount, l)}`),
+      win && win.amount && both((l) => `${pick(win.title, l)} – ₹${num(win.amount, l)}`),
       label('registrationOpen'),
       C.tournament.tagline,
     ].filter(Boolean);
@@ -239,13 +239,19 @@
 
   function renderPrizes() {
     const [win, ...rest] = C.season2.prizes.team;
+    // with no amount, "+ Trophy" reads as just "Trophy"
+    const extraText = (p) => (p.amount ? p.extra : both((l) => pick(p.extra, l).replace(/^\+\s*/, '')));
+    const anyAmount = [...C.season2.prizes.team, ...C.season2.prizes.individual].some((p) => p.amount);
+    const note = $('#prizesNote');
+    if (note) note.hidden = anyAmount;
     $('#teamPrizes').innerHTML = `
       <article class="prize-win reveal">
         <div class="prize-win__in">
           <svg class="prize-win__trophy" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-trophy-fill"></use></svg>
           <p class="prize-win__place">${T(win.title)}</p>
-          <p class="prize-win__amt gold-text" data-countup>₹${CN(win.amount)}</p>
-          ${win.extra ? `<p class="prize-win__extra">${T(win.extra)}</p>` : ''}
+          ${win.amount
+            ? `<p class="prize-win__amt gold-text" data-countup>₹${CN(win.amount)}</p>${win.extra ? `<p class="prize-win__extra">${T(win.extra)}</p>` : ''}`
+            : `${win.extra ? `<p class="prize-win__amt prize-win__amt--text gold-text">${T(extraText(win))}</p>` : ''}<p class="prize-win__tba">${L('prizeTba')}</p>`}
         </div>
       </article>
       <div class="prize-list">
@@ -254,7 +260,7 @@
             <span class="medal medal--${p.place}">${N(p.place)}</span>
             <div class="prize__body">
               <h3 class="prize__title">${T(p.title)}</h3>
-              ${p.extra ? `<p class="prize__extra">${T(p.extra)}</p>` : ''}
+              ${p.extra ? `<p class="prize__extra">${T(extraText(p))}</p>` : ''}
             </div>
             <p class="prize__amt">${p.amount ? rupee(p.amount) : ''}</p>
           </article>`).join('')}
@@ -265,7 +271,7 @@
         <div class="ind__icon">${icon(a.icon)}</div>
         <h4 class="ind__title">${T(a.title)}</h4>
         ${a.amount ? `<p class="ind__prize">${rupee(a.amount)}</p>` : ''}
-        ${a.extra ? `<p class="ind__extra">${T(a.extra)}</p>` : ''}
+        ${a.extra ? `<p class="ind__extra">${T(extraText(a))}</p>` : ''}
       </article>`).join('');
   }
 

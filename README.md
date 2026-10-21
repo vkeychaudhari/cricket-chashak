@@ -1,6 +1,6 @@
-# महात्मा ज्योतिराव फुले क्रिकेट चषक – पर्व ०२ - २०२७
+# महात्मा जोतीराव फुले क्रिकेट चषक – पर्व ०२ - २०२७
 
-Website for the **Mahatma Jyotirao Phule Cricket Chashak, Season 2 (2027)**. It's a bilingual (Marathi + English), mobile-first site with two tabs: **Season 2** and **Season 1 Success Story**.
+Website for the **Mahatma Jotirao Phule Cricket Chashak, Season 2 (2027)**. It's a bilingual (Marathi + English), mobile-first site with two tabs: **Season 2** and **Season 1 Success Story**.
 
 Plain HTML, CSS and JavaScript. No build step, no installs, and it's free to host.
 
