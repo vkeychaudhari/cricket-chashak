@@ -268,15 +268,16 @@ window.SITE_CONFIG = {
     },
 
     // Player awards – team = team "id"; stat line is free text
-    awards: [ // DUMMY – replace with the real award winners (team = team id, or "")
-      { icon: "bat", title: { mr: "सर्वोत्कृष्ट फलंदाज", en: "Best Batter" }, player: "Akash Pawar", team: "",
-        photo: "images/season1/awards/best-batter.jpg", stat: { mr: "५ सामने · २४८ धावा · स्ट्राइक रेट १८२", en: "5 matches · 248 runs · SR 182" } },
-      { icon: "ball", title: { mr: "सर्वोत्कृष्ट गोलंदाज", en: "Best Bowler" }, player: "Swapnil Gite", team: "",
-        photo: "images/season1/awards/best-bowler.jpg", stat: { mr: "१४ बळी · इकॉनॉमी ६.२ · सर्वोत्तम ४/१२", en: "14 wickets · Econ 6.2 · Best 4/12" } },
+    // Season 1 award winners. team = team id (or ""), stat = optional short stat line
+    awards: [
+      { icon: "bat", title: { mr: "सर्वोत्कृष्ट फलंदाज", en: "Best Batter" }, player: "Abhi Shirsath", team: "",
+        photo: "images/season1/awards/abhi-shirsath.webp", stat: "" },
+      { icon: "ball", title: { mr: "सर्वोत्कृष्ट गोलंदाज", en: "Best Bowler" }, player: "Yogesh Sonnis", team: "",
+        photo: "images/season1/awards/yogesh-sonnis.webp", stat: "" },
       { icon: "hand", title: { mr: "सर्वोत्कृष्ट क्षेत्ररक्षक", en: "Best Fielder" }, player: "Aniket Sonawane", team: "",
-        photo: "images/season1/awards/best-fielder.jpg", stat: { mr: "९ झेल · ३ धावबाद", en: "9 catches · 3 run-outs" } },
-      { icon: "star", title: { mr: "मालिकावीर (MVP)", en: "MVP" }, player: "Pankaj Hire", team: "",
-        photo: "images/season1/awards/mvp.jpg", stat: { mr: "१८६ धावा · ८ बळी · ४ सामनावीर", en: "186 runs · 8 wickets · 4× Player of the Match" } },
+        photo: "images/season1/awards/aniket-sonawane.webp", stat: "" },
+      { icon: "star", title: { mr: "मालिकावीर (MVP)", en: "MVP" }, player: "Vishal Khairnar", team: "",
+        photo: "images/season1/awards/vishal-khairnar.webp", stat: "" },
     ],
 
     // Photo gallery – add as many as you like
