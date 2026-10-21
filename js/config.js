@@ -159,6 +159,23 @@ window.SITE_CONFIG = {
                 Leave [] to show "squad list coming soon". */
     teams: [
       {
+        id: "satyashodhak-lions", color: "#9C5A1A",
+        name: { mr: "सत्यशोधक लायन्स", en: "Satyashodhak Lions" },
+        owner: "Jaywant Jejurkar",
+        brand: "Jay Shankar Group",
+        ownerPhoto: "images/season1/owners/owner-08-jaywant-jejurkar.webp",
+        logo: "images/season1/logos/team-08-satyashodhak-lions.webp",
+        players: ["Shashi", "Vishal", "Kushal", "Nilesh", "Bhushan", "Vicky", "Prathmesh", "Rahul", "Gokul", "Mahesh", "Amol"],
+      },
+      {
+        id: "jotirao-royals", color: "#A15C00",
+        name: { mr: "जोतीराव रॉयल्स", en: "Jotirao Royals" },
+        owner: "Ambadas Khaire",
+        ownerPhoto: "images/season1/owners/owner-11-ambadas-khaire.webp",
+        logo: "images/season1/logos/team-11-jotirao-royals.webp",
+        players: ["Gaurav", "Shrikant", "KJ", "Rutik", "Aditya", "Vijay", "Prathm", "Chinmay", "Nitin", "Girish", "Vinayak", "Ajay"],
+      },
+      {
         id: "phule-panthers", color: "#8A6A2F",
         name: { mr: "फुले पँथर्स", en: "Phule Panthers" },
         owner: "Nagesh Kashmire",
@@ -213,15 +230,6 @@ window.SITE_CONFIG = {
         players: ["Saukhya", "Punarva", "Rohit", "Aniket", "Ram", "Pramod", "KK", "Yash", "Aditya", "Sarthak", "Tejas"],
       },
       {
-        id: "satyashodhak-lions", color: "#9C5A1A",
-        name: { mr: "सत्यशोधक लायन्स", en: "Satyashodhak Lions" },
-        owner: "Jaywant Jejurkar",
-        brand: "Jay Shankar Group",
-        ownerPhoto: "images/season1/owners/owner-08-jaywant-jejurkar.webp",
-        logo: "images/season1/logos/team-08-satyashodhak-lions.webp",
-        players: ["Shashi", "Vishal", "Kushal", "Nilesh", "Bhushan", "Vicky", "Prathmesh", "Rahul", "Gokul", "Mahesh", "Amol"],
-      },
-      {
         id: "jotirao-challengers", color: "#1565C0",
         name: { mr: "जोतीराव चॅलेंजर्स", en: "Jotirao Challengers" },
         owner: "Satish Gaikwad",
@@ -239,14 +247,6 @@ window.SITE_CONFIG = {
         ownerPhoto: "images/season1/owners/owner-10-sanjay-mali.webp",
         logo: "images/season1/logos/team-10-phule-supergiants.webp",
         players: ["Yash", "Tanmay", "Prasad", "Viju", "Saurabh", "Ajay", "Sanskar", "Ajay", "Suhas", "Rohit", "Kailas"],
-      },
-      {
-        id: "jotirao-royals", color: "#A15C00",
-        name: { mr: "जोतीराव रॉयल्स", en: "Jotirao Royals" },
-        owner: "Ambadas Khaire",
-        ownerPhoto: "images/season1/owners/owner-11-ambadas-khaire.webp",
-        logo: "images/season1/logos/team-11-jotirao-royals.webp",
-        players: ["Gaurav", "Shrikant", "KJ", "Rutik", "Aditya", "Vijay", "Prathm", "Chinmay", "Nitin", "Girish", "Vinayak", "Ajay"],
       },
       {
         id: "kranti-warriors", color: "#9A2A1E",
@@ -274,10 +274,10 @@ window.SITE_CONFIG = {
         photo: "images/season1/awards/abhi-shirsath.webp", stat: "" },
       { icon: "ball", title: { mr: "सर्वोत्कृष्ट गोलंदाज", en: "Best Bowler" }, player: "Yogesh Sonnis", team: "",
         photo: "images/season1/awards/yogesh-sonnis.webp", stat: "" },
-      { icon: "hand", title: { mr: "सर्वोत्कृष्ट क्षेत्ररक्षक", en: "Best Fielder" }, player: "Aniket Sonawane", team: "",
-        photo: "images/season1/awards/aniket-sonawane.webp", stat: "" },
-      { icon: "star", title: { mr: "मालिकावीर (MVP)", en: "MVP" }, player: "Vishal Khairnar", team: "",
+      { icon: "hand", title: { mr: "सर्वोत्कृष्ट क्षेत्ररक्षक", en: "Best Fielder" }, player: "Vishal Khairnar", team: "",
         photo: "images/season1/awards/vishal-khairnar.webp", stat: "" },
+      { icon: "star", title: { mr: "मालिकावीर (MVP)", en: "MVP" }, player: "Abhi Shirsath", team: "",
+        photo: "images/season1/awards/abhi-shirsath.webp", stat: "" },
     ],
 
     // Photo gallery – add as many as you like
