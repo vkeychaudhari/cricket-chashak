@@ -30,7 +30,7 @@ window.SITE_CONFIG = {
   /* ---------- Links ---------- */
   links: {
     registrationForm: "https://docs.google.com/forms/d/e/1FAIpQLScUfC_euI_HjzbfOx9DgTEDQSOH7WdnMllYwfx1VdtYy3a0bQ/viewform", // Google Form for registration
-    instagram: "",        // PASTE INSTAGRAM PAGE URL here, e.g. "https://www.instagram.com/yourpage"
+    instagram: "https://www.instagram.com/mahatma_jotirao_phule_cricket_/", // Instagram page
     mapEmbed: "",         // optional: Google Maps → Share → "Embed a map" → copy only the src="..." URL
     mapLink: "",          // optional: Google Maps share link (leave "" to auto-generate from venue)
   },
@@ -150,35 +150,39 @@ window.SITE_CONFIG = {
 
     /* Owner & Team slideshow — add / remove / edit teams here.
        id: short unique name (used by standings & awards below)
-       name: team name (currently the owner's brand — change if the team had another name)
+       name: team name (teams without a confirmed name currently show the owner's brand)
+       brand: optional – owner's business, shown under the owner's name
        color: team colour (hex) – used for accents & logo placeholder
        ownerPhoto / logo: image paths (add the files to the images folder)
        players: list of names – plain "Name" or { mr: "नाव", en: "Name" }.
                 Leave [] to show "squad list coming soon". */
     teams: [
       {
-        id: "kashmire-electricals", color: "#1E88E5",
-        name: "Kashmire Electricals",
+        id: "phule-panthers", color: "#8A6A2F",
+        name: { mr: "फुले पँथर्स", en: "Phule Panthers" },
         owner: "Nagesh Kashmire",
+        brand: "Kashmire Electricals",
         ownerPhoto: "images/season1/owners/owner-01-nagesh-kashmire.webp",
-        logo: "images/season1/logos/logo-01-kashmire-electricals.webp",
-        players: [],
+        logo: "images/season1/logos/team-01-phule-panthers.webp",
+        players: ["Abhishek", "Gorakh", "BS", "Himanshu", "Kaivu", "Avdhoot", "Mangesh", "Andy", "Vikram", "SK", "Pratik"],
       },
       {
-        id: "aaradhya-developers", color: "#B8860B",
-        name: "Aaradhya Developers",
+        id: "satyashodhak-titans", color: "#D84315",
+        name: { mr: "सत्यशोधक टायटन्स", en: "Satyashodhak Titans" },
         owner: "Bhushan Shinde",
+        brand: "Aaradhya Developers",
         ownerPhoto: "images/season1/owners/owner-02-bhushan-shinde.webp",
-        logo: "images/season1/logos/logo-02-aaradhya-developers.webp",
-        players: [],
+        logo: "images/season1/logos/team-02-satyashodhak-titans.webp",
+        players: ["Umesh", "Ravi", "Roshan", "Ganesh", "Roshan", "Bhushan", "Yogesh", "Anklesh", "Omkar", "Pavan", "Vijay", "Yogesh"],
       },
       {
-        id: "mayur-enterprises", color: "#1F5FAD",
-        name: "Mayur Enterprises",
+        id: "phule-power-hitters", color: "#C62828",
+        name: { mr: "फुले पॉवर हीटर्स", en: "Phule Power Hitters" },
         owner: "Bhausaheb Mali & Sagar Mahajan",
+        brand: "Mayur Enterprises",
         ownerPhoto: "images/season1/owners/owner-03-bhausaheb-mali-sagar-mahajan.webp",
-        logo: "images/season1/logos/logo-03-mayur-enterprises.webp",
-        players: [],
+        logo: "images/season1/logos/team-03-phule-power-hitters.webp",
+        players: ["Shlok", "Vaibhav", "Atharva", "Pinu K.", "Amol", "Om", "Vedant", "Kunal", "Vedant", "Milan", "Yash", "Vaibhav"],
       },
       {
         id: "vazcon-realty", color: "#E06A1B",
@@ -189,20 +193,22 @@ window.SITE_CONFIG = {
         players: [],
       },
       {
-        id: "logique-technologies", color: "#0097A7",
-        name: "Logique Technologies",
+        id: "krantisurya-knight-riders", color: "#B26A00",
+        name: { mr: "क्रांतिसुर्य नाईट रायडर्स", en: "Krantisurya Knight Riders" },
         owner: "Yogesh Sonnis",
+        brand: "Logique Technologies",
         ownerPhoto: "images/season1/owners/owner-05-yogesh-sonnis.webp",
-        logo: "images/season1/logos/logo-05-logique-technologies.webp",
-        players: [],
+        logo: "images/season1/logos/team-05-krantisurya-knight-riders.webp",
+        players: ["Saurabh", "Nil", "Vicky", "Geetesh", "Anna", "Avi", "Pavan", "Tanmay", "Saurabh", "Lucky", "Pankaj", "Amol"],
       },
       {
-        id: "ca-india", color: "#2E7D32",
-        name: "CA India",
+        id: "jotirao-strikers", color: "#2E7D32",
+        name: { mr: "जोतीराव स्ट्राईकर्स", en: "Jotirao Strikers" },
         owner: "Pratik Jejurkar",
+        brand: "CA India",
         ownerPhoto: "images/season1/owners/owner-06-pratik-jejurkar.webp",
-        logo: "images/season1/logos/logo-06-ca-india.webp",
-        players: [],
+        logo: "images/season1/logos/team-06-jotirao-strikers.webp",
+        players: ["Saukhya", "Punarva", "Rohit", "Aniket", "Ram", "Pramod", "KK", "Yash", "Aditya", "Sarthak", "Tejas"],
       },
       {
         id: "the-suki-media", color: "#E53935",
@@ -213,12 +219,13 @@ window.SITE_CONFIG = {
         players: [],
       },
       {
-        id: "jay-shankar-group", color: "#9E1B32",
-        name: "Jay Shankar Group",
+        id: "satyashodhak-lions", color: "#9C5A1A",
+        name: { mr: "सत्यशोधक लायन्स", en: "Satyashodhak Lions" },
         owner: "Jaywant Jejurkar",
+        brand: "Jay Shankar Group",
         ownerPhoto: "images/season1/owners/owner-08-jaywant-jejurkar.webp",
-        logo: "images/season1/logos/logo-08-jay-shankar-group.webp",
-        players: [],
+        logo: "images/season1/logos/team-08-satyashodhak-lions.webp",
+        players: ["Shashi", "Vishal", "Kushal", "Nilesh", "Bhushan", "Vicky", "Prathmesh", "Rahul", "Gokul", "Mahesh", "Amol"],
       },
       {
         id: "data-engineer", color: "#0B2A6F",

@@ -709,11 +709,12 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
   background: var(--gold-grad); color: #041329; font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
 }
 .tcard__owner strong { display: block; margin-top: 6px; font-weight: 800; font-size: clamp(1.35rem, 5vw, 1.85rem); line-height: 1.2; }
+.tcard__brand { display: block; margin-top: 2px; font-size: .9rem; font-weight: 600; color: var(--gold-300); }
 .tcard__body { padding: 22px 18px 24px; color: var(--ink); }
 .tcard__head { display: flex; align-items: center; gap: 14px; }
 /* brand logos are wide rectangles, so they sit on a white plate instead of a circle */
 .tcard__logo {
-  width: 100px; height: 76px; flex: none; overflow: hidden; border-radius: 16px; background: #fff; padding: 4px;
+  width: 104px; height: 88px; flex: none; overflow: hidden; border-radius: 16px; background: #fff; padding: 4px;
   box-shadow: 0 0 0 1px rgba(8, 26, 58, .08), 0 0 0 4px var(--team), 0 12px 24px -10px rgba(0, 0, 0, .4);
 }
 .tcard__logo img { width: 100%; height: 100%; object-fit: contain; border-radius: 12px; }
@@ -738,7 +739,7 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
   .tcard { grid-template-columns: 5fr 7fr; }
   .tcard__media { aspect-ratio: auto; min-height: 540px; }
   .tcard__body { padding: 40px 40px 36px; display: flex; flex-direction: column; justify-content: center; }
-  .tcard__logo { width: 132px; height: 100px; }
+  .tcard__logo { width: 140px; height: 116px; }
   .squad { grid-template-columns: repeat(3, 1fr); gap: 10px; }
 }
 

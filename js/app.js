@@ -448,7 +448,7 @@
         <article class="tcard">
           <div class="tcard__media">
             ${img(t.ownerPhoto, { kind: 'person', label: `Owner photo · ${pick(t.name, 'en')}`, color: t.color }, { alt: both((l) => `${pick(label('owner'), l)}: ${pick(t.owner, l)}`) })}
-            <div class="tcard__owner"><small>${L('owner')}</small><strong>${T(t.owner)}</strong></div>
+            <div class="tcard__owner"><small>${L('owner')}</small><strong>${T(t.owner)}</strong>${t.brand ? `<span class="tcard__brand">${T(t.brand)}</span>` : ''}</div>
           </div>
           <div class="tcard__body">
             <div class="tcard__head">
