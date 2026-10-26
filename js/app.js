@@ -536,7 +536,7 @@
   }
 
   function renderGallery() {
-    const pattern = ['big', '', '', 'tall', '', '', 'wide', '', 'tall', '', '', ''];
+    const pattern = ['big', '', '', '', '', '', 'wide', '', 'tall', '', '', ''];
     galleryItems = (C.season1.gallery || []).map((g, i) => {
       const ph = { kind: 'photo', label: `Season 1 photo ${i + 1}`, w: 1200, h: 800, color: i % 2 ? '#0A3A7A' : '#075FC6' };
       return { src: g.src, caption: g.caption, html: img(g.src, ph, { alt: g.caption }), ph: PH.length - 1 };

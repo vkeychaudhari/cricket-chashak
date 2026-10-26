@@ -264,11 +264,12 @@ window.SITE_CONFIG = {
     ],
 
     // Photo gallery – add as many as you like
+    // Photo gallery. Entries still pointing at photo-NN.jpg show a placeholder until that file is added.
     gallery: [
-      { src: "images/season1/gallery/photo-01.jpg", caption: { mr: "उद्घाटन सोहळा", en: "Opening ceremony" } },
-      { src: "images/season1/gallery/photo-02.jpg", caption: { mr: "पहिला चेंडू", en: "The first ball" } },
-      { src: "images/season1/gallery/photo-03.jpg", caption: { mr: "षटकारांचा पाऊस", en: "Raining sixes" } },
-      { src: "images/season1/gallery/photo-04.jpg", caption: { mr: "विकेटचा जल्लोष", en: "Wicket celebration" } },
+      { src: "images/season1/gallery/s1-01-winner-team.webp", caption: { mr: "विजेता संघ", en: "Winner Team" } },
+      { src: "images/season1/gallery/s1-02-runner-up-team.webp", caption: { mr: "उपविजेता संघ", en: "Runner-up Team" } },
+      { src: "images/season1/gallery/s1-03-third-place-team.webp", caption: { mr: "तृतीय क्रमांक संघ", en: "3rd Place Team" } },
+      { src: "images/season1/gallery/s1-04-fourth-place-team.webp", caption: { mr: "चतुर्थ क्रमांक संघ", en: "4th Place Team" } },
       { src: "images/season1/gallery/photo-05.jpg", caption: { mr: "अप्रतिम झेल", en: "A stunning catch" } },
       { src: "images/season1/gallery/photo-06.jpg", caption: { mr: "प्रेक्षकांचा उत्साह", en: "The roaring crowd" } },
       { src: "images/season1/gallery/photo-07.jpg", caption: { mr: "संघ फोटो", en: "Team photo" } },
