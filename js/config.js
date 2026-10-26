@@ -217,7 +217,7 @@ window.SITE_CONFIG = {
         name: { mr: "जोतीराव चॅलेंजर्स", en: "Jotirao Challengers" },
         owner: "Satish Gaikwad",
         brand: "Data Engineer",
-        ownerPhoto: "images/season1/owners/owner-09-satish-gaikwad.webp",
+        ownerPhoto: "images/season1/owners/owner-09-satish-gaikwad-v2.webp",
         logo: "images/season1/logos/team-09-jotirao-challengers.webp",
         logoBg: "#000000", // logo artwork has a black background
         players: ["Akki", "GG", "Appa", "Aadee", "Sahil", "Chiku", "Pahadi", "Vijay", "Pravin", "Yogesh", "Pranesh", "Digvijay"],
@@ -258,7 +258,7 @@ window.SITE_CONFIG = {
       { icon: "ball", title: { mr: "सर्वोत्कृष्ट गोलंदाज", en: "Best Bowler" }, player: "Yogesh Sonnis", team: "",
         photo: "images/season1/awards/yogesh-sonnis.webp", stat: "" },
       { icon: "hand", title: { mr: "सर्वोत्कृष्ट क्षेत्ररक्षक", en: "Best Fielder" }, player: "Vishal Khairnar", team: "",
-        photo: "images/season1/awards/vishal-khairnar.webp", stat: "" },
+        photo: "images/season1/awards/vishal-khairnar-fielder.webp", stat: "" },
       { icon: "star", title: { mr: "मालिकावीर (MVP)", en: "MVP" }, player: "Abhi Shirsath", team: "",
         photo: "images/season1/awards/abhi-shirsath.webp", stat: "" },
     ],

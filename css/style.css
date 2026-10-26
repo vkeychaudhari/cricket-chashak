@@ -791,11 +791,11 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
 .award__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
 .award:hover .award__media img { transform: scale(1.05); }
 .award__media::after { content: ""; position: absolute; inset: auto 0 0; height: 40%; background: linear-gradient(transparent, rgba(2, 11, 32, .55)); }
+/* award title chip sits under the player's name, so it never covers the photo */
 .award__badge {
-  position: absolute; z-index: 1; top: 10px; left: 10px; max-width: calc(100% - 20px);
-  display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 999px;
-  background: rgba(2, 11, 32, .82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-  color: var(--gold); font-size: .74rem; font-weight: 700; line-height: 1.2;
+  display: inline-flex; align-items: center; gap: 6px; max-width: 100%; margin-top: 8px;
+  padding: 6px 11px; border-radius: 999px;
+  background: var(--navy-900); color: var(--gold); font-size: .74rem; font-weight: 700; line-height: 1.2;
 }
 .award__badge .i { width: 1.1em; height: 1.1em; }
 .award__body { padding: 14px 14px 16px; color: var(--ink); }

@@ -513,10 +513,10 @@
         <article class="award reveal" style="--d:${i * 0.08}s;--team:${esc(t.color || '#075FC6')}">
           <div class="award__media">
             ${img(a.photo, { kind: 'person', label: `${pick(a.title, 'en')} photo`, color: t.color }, { alt: both((l) => `${pick(a.title, l)} – ${pick(a.player, l)}`) })}
-            <span class="award__badge">${icon(a.icon || 'star')}${T(a.title)}</span>
           </div>
           <div class="award__body">
             <h3 class="award__name">${T(a.player)}</h3>
+            <span class="award__badge">${icon(a.icon || 'star')}${T(a.title)}</span>
             ${t.name ? `<p class="award__team">${T(t.name)}</p>` : ''}
             ${a.stat ? `<p class="award__stat">${T(a.stat)}</p>` : ''}
           </div>
