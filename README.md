@@ -31,7 +31,6 @@ All the text, fees, dates, prizes, teams, players, quotes and links live in **`j
 | Auction date/time/venue (the countdown uses this), start & final dates | `season2.schedule` |
 | Venue name, address, map | `season2.venue` (and optional `links.mapEmbed`) |
 | Mahatma Phule quotes | `season2.quotes` |
-| Season 1 story and highlight numbers | `season1.story`, `season1.highlights` |
 | **Season 1 teams, owners, players** (the slideshow) | `season1.teams` |
 | Final standings (podium) | `season1.standings` |
 | Player awards | `season1.awards` |
@@ -57,9 +56,10 @@ All the text, fees, dates, prizes, teams, players, quotes and links live in **`j
 
 ### ⚠ Please check before publishing
 - **Auction date/time/venue**: empty until announced (shows "Date to be announced").
-- **Prize amounts, start/final timings**: dummy.
+- **Prize amounts**: hidden until announced (`amount: null` in `season2.prizes`).
+- **Start/final timings**: dummy.
 - **Quotes**: the first two are well-known lines from Phule's writings. The 3rd and 4th are popular attributions/paraphrases. Please verify the wording.
-- **Season 1 teams, owners, players, standings, awards, highlights, story**: all dummy.
+- **Season 1 final standings and gallery photos**: not added yet (teams, squads and award winners are real).
 
 ---
 

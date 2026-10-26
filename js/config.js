@@ -131,25 +131,6 @@ window.SITE_CONFIG = {
   season1: {
     season: { mr: "पर्व ०१ – २०२६", en: "Season 01 – 2026" },
 
-    // DUMMY draft – edit freely
-    story: [
-      {
-        mr: "२०२६ मध्ये नाशिकच्या मातीत एका नव्या क्रिकेट परंपरेचा जन्म झाला. महात्मा जोतीराव फुले क्रिकेट चषकाच्या पहिल्या पर्वात ११ संघ मैदानात उतरले आणि प्रेक्षकांच्या उदंड प्रतिसादात समता, बंधुता आणि खिलाडूवृत्तीचा खरा उत्सव साजरा झाला.",
-        en: "In 2026, a new cricket tradition was born on the grounds of Nashik. The first season of the Mahatma Jotirao Phule Cricket Chashak brought 11 teams onto the field, cheered on by passionate crowds, in a true celebration of equality, brotherhood and sportsmanship.",
-      },
-      {
-        mr: "प्रत्येक चौकार, प्रत्येक बळी आणि प्रत्येक झेलाने एकच संदेश दिला — मैदानात सगळे समान! पहिल्या पर्वाच्या या सुवर्ण आठवणी आता पर्व २ साठी नवी प्रेरणा आहेत.",
-        en: "Every boundary, every wicket and every catch carried one message — on the field, everyone is equal! The golden memories of Season 1 are now the inspiration for Season 2.",
-      },
-    ],
-
-    highlights: [ // teams = real; players, matches & sixes are DUMMY
-      { value: 11, label: { mr: "संघ", en: "Teams" } },
-      { value: 80, label: { mr: "खेळाडू", en: "Players" } },
-      { value: 15, label: { mr: "सामने", en: "Matches" } },
-      { value: 120, suffix: "+", label: { mr: "षटकार", en: "Sixes" } },
-    ],
-
     /* Owner & Team slideshow — add / remove / edit teams here.
        id: short unique name (used by standings & awards below)
        name: team name (teams without a confirmed name currently show the owner's brand)
@@ -444,7 +425,6 @@ window.SITE_CONFIG = {
     close: { mr: "बंद करा", en: "Close" },
     comingSoon: { mr: "ही लिंक लवकरच उपलब्ध होईल.", en: "This link will be available soon." },
 
-    s1Title: { mr: "एका सुवर्ण पर्वाची यशोगाथा", en: "The story of a golden first season" },
     teamsEyebrow: { mr: "संघ आणि मालक", en: "Owners & teams" },
     teamsTitle: { mr: "पर्व १ चे शिलेदार", en: "The heroes of Season 1" },
     owner: { mr: "संघ मालक", en: "Team owner" },

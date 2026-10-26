@@ -437,14 +437,6 @@
   /* =================================================================
      TAB 2 — SEASON 1
      ================================================================= */
-  function renderSeason1Intro() {
-    const s1 = C.season1;
-    $('#s1Season').innerHTML = T(s1.season);
-    $('#s1Story').innerHTML = (s1.story || []).map((p) => `<p>${T(p)}</p>`).join('');
-    $('#s1Stats').innerHTML = (s1.highlights || []).map((h) => `
-      <div class="s1-stat"><b data-countup>${CN(h.value)}${h.suffix ? esc(h.suffix) : ''}</b><span>${T(h.label)}</span></div>`).join('');
-  }
-
   function renderTeams() {
     const teams = C.season1.teams;
     const n = teams.length;
@@ -876,7 +868,6 @@
   renderQuotes();
   renderContact();
   renderSponsors();
-  renderSeason1Intro();
   renderTeams();
   renderPodium();
   renderAwards();

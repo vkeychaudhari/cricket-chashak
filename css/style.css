@@ -234,12 +234,12 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
 .hero__emblem img { width: 100%; height: auto; filter: drop-shadow(0 0 9px rgba(255, 197, 73, .35)) drop-shadow(0 12px 22px rgba(0, 0, 0, .5)); }
 
 .hero__title { margin-top: 8px; line-height: 1; }
-.hero__title .l1, .s1-hero h1 .l1 {
+.hero__title .l1 {
   display: block; padding-left: .24em;
   font-weight: 800; font-size: clamp(.8rem, 3.6vw, 1.3rem); letter-spacing: .24em; text-transform: uppercase;
   color: var(--white); text-shadow: 0 2px 10px #030C19;
 }
-.hero__title .l2, .s1-hero h1 .l2 {
+.hero__title .l2 {
   display: block; margin-top: 6px; white-space: nowrap;
   font-family: var(--font-display); font-weight: 900; text-transform: uppercase; letter-spacing: -.005em; line-height: .92;
   font-size: clamp(2.5rem, 10.6vw, 6rem);
@@ -649,51 +649,12 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
   .cta { padding: 66px 40px; }
 }
 
-/* ---------- season 1 intro ---------- */
-.s1-hero {
-  position: relative; isolation: isolate; overflow: hidden; color: var(--white);
-  padding: calc(var(--hdr-h) + 34px) 18px 80px;
-  background:
-    linear-gradient(180deg, rgba(2, 11, 32, .55), rgba(2, 11, 32, .72) 60%, var(--navy-950)),
-    url("../images/theme/stadium-desktop.webp") center top / cover no-repeat,
-    var(--navy-950);
-}
-.s1-hero .hero__fx { opacity: .7; }
-.s1-hero__inner { max-width: 1160px; margin: 0 auto; display: grid; gap: 28px; align-items: center; }
-.s1-hero__text { text-align: center; }
-.s1-hero h1 { margin-top: 16px; line-height: 1; }
-.s1-hero h1 .l2 { font-size: clamp(2.4rem, 10.2vw, 5rem); }
-.s1-hero .hero__season { margin-top: 14px; }
-.s1-hero__sub { margin-top: 24px; font-weight: 800; font-size: clamp(1.15rem, 4.4vw, 1.55rem); color: var(--gold-300); }
-.s1-story { display: grid; gap: 12px; max-width: 62ch; margin: 12px auto 0; font-size: 1.04rem; color: rgba(249, 250, 255, .86); }
-.s1-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 30px; }
-.s1-stat { padding: 18px 14px; border-radius: 20px; text-align: center; background: var(--card-grad); border: 1px solid var(--line); }
-.s1-stat b {
-  display: block; font-family: var(--font-display); font-weight: 900; font-size: 2.6rem; line-height: 1; font-variant-numeric: tabular-nums;
-  background: var(--gold-text); -webkit-background-clip: text; background-clip: text; color: transparent;
-}
-.s1-stat span { font-size: .92rem; color: var(--muted); }
-.pill-badge {
-  display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px;
-  background: rgba(255, 196, 67, .1); border: 1px solid rgba(255, 196, 67, .4);
-  color: var(--gold-300); font-weight: 700; font-size: .86rem;
-}
-.pill-badge .i { width: 1em; height: 1em; color: var(--gold); }
-.s1-hero__art { position: relative; order: -1; justify-self: center; width: 150px; aspect-ratio: 1; display: grid; place-items: center; }
-.rays {
-  position: absolute; inset: -40%; border-radius: 50%;
-  background: repeating-conic-gradient(from 0deg, rgba(255, 196, 67, .15) 0 8deg, transparent 8deg 20deg);
-  -webkit-mask-image: radial-gradient(circle, #000 20%, transparent 68%); mask-image: radial-gradient(circle, #000 20%, transparent 68%);
-  animation: spin 40s linear infinite;
-}
-.s1-hero__trophy { position: relative; width: 78%; height: 78%; filter: drop-shadow(0 20px 40px rgba(255, 196, 67, .4)); animation: bob 3.4s ease-in-out infinite; }
-
-@media (min-width: 960px) {
-  .s1-hero__inner { grid-template-columns: 1.35fr .65fr; gap: 50px; }
-  .s1-hero__text { text-align: left; }
-  .s1-story { margin-left: 0; }
-  .s1-stats { grid-template-columns: repeat(4, 1fr); }
-  .s1-hero__art { order: 0; width: min(340px, 100%); }
+/* ---------- season 1 tab ----------
+   The tab opens straight on the slideshow, so its first section clears the
+   fixed header and gets a navy band behind the header like the Season 2 hero. */
+.tab-panel[data-panel="season1"] > .section:first-child {
+  padding-top: calc(var(--hdr-h) + 56px);
+  background: linear-gradient(180deg, var(--navy-950) 0, var(--navy-900) calc(var(--hdr-h) + 16px), var(--light) calc(var(--hdr-h) + 16px));
 }
 
 /* ---------- owner & team slideshow ---------- */
@@ -1133,13 +1094,13 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
    Barlow Condensed is Latin-only and tuned for tight caps, so Marathi text uses
    Noto Sans Devanagari with its own sizes, line-heights and no letter-spacing. */
 html[lang="mr"] :is(.eyebrow, .cd__unit, .prize-win__place, .tl__tag, .tcard__kicker, .tcard__squad-title,
-  .tcard__owner small, .pod__label, .ticker__item, .pill-badge, .sub-head) { letter-spacing: 0; text-transform: none; }
-html[lang="mr"] :is(.cd__num, .stat__num, .prize-win__amt, .prize__amt, .ind__prize, .pod__step, .s1-stat b,
+  .tcard__owner small, .pod__label, .ticker__item, .sub-head) { letter-spacing: 0; text-transform: none; }
+html[lang="mr"] :is(.cd__num, .stat__num, .prize-win__amt, .prize__amt, .ind__prize, .pod__step,
   .medal, .cd__msg, .sec-head h2, .cta h2, .sub-head, .tcard__team, .ticker__item, .squad li b) { font-family: var(--font-mr); }
-html[lang="mr"] .hero__title .l1, html[lang="mr"] .s1-hero h1 .l1 {
+html[lang="mr"] .hero__title .l1 {
   padding-left: 0; letter-spacing: 0; text-transform: none; font-weight: 700; font-size: clamp(1.05rem, 4.8vw, 1.6rem);
 }
-html[lang="mr"] .hero__title .l2, html[lang="mr"] .s1-hero h1 .l2 {
+html[lang="mr"] .hero__title .l2 {
   font-family: var(--font-mr); font-weight: 800; letter-spacing: 0; line-height: 1.3; font-size: clamp(2.3rem, 10.6vw, 4.8rem);
 }
 html[lang="mr"] :is(.sec-head h2, .cta h2) { font-weight: 800; letter-spacing: 0; line-height: 1.3; font-size: clamp(1.75rem, 6.4vw, 2.7rem); }
@@ -1157,7 +1118,6 @@ html[lang="mr"] .stat__num { font-size: clamp(2.2rem, 9.4vw, 3.4rem); line-heigh
 html[lang="mr"] .prize-win__amt { font-size: clamp(2.6rem, 12vw, 4.4rem); line-height: 1.2; }
 html[lang="mr"] .prize-win__amt--text { font-size: clamp(2.2rem, 9vw, 3.4rem); line-height: 1.3; }
 html[lang="mr"] .prize__amt { font-size: clamp(1.1rem, 4.6vw, 1.8rem); }
-html[lang="mr"] .s1-stat b { font-size: 2.2rem; line-height: 1.2; }
 html[lang="mr"] .pod__step { font-size: clamp(2rem, 7.5vw, 3.4rem); line-height: 1.1; }
 html[lang="mr"] .cd__msg { font-size: clamp(1.4rem, 6vw, 2rem); line-height: 1.4; }
 
