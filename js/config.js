@@ -278,6 +278,26 @@ window.SITE_CONFIG = {
       { src: "images/season1/gallery/photo-11.jpg", caption: { mr: "मान्यवरांची उपस्थिती", en: "Distinguished guests" } },
       { src: "images/season1/gallery/photo-12.jpg", caption: { mr: "पर्व १ – एक आठवण", en: "Season 1 – a memory" } },
     ],
+
+    // Season 1 sponsors — logo wall at the end of the Season 1 tab, shown in this order.
+    // Add a sponsor: put the logo in images/season1/sponsors/ and add a line here.
+    sponsors: [
+      { name: "Jay Shankar Group", logo: "images/season1/sponsors/s1-sponsor-01-jay-shankar-group.webp" },
+      { name: "Kashmire Electricals", logo: "images/season1/sponsors/s1-sponsor-02-kashmire-electricals.webp" },
+      { name: "Logique Technologies", logo: "images/season1/sponsors/s1-sponsor-03-logique-technologies.webp" },
+      { name: "The Suki Media", logo: "images/season1/sponsors/s1-sponsor-04-the-suki-media.webp" },
+      { name: "Vazcon Realty", logo: "images/season1/sponsors/s1-sponsor-05-vazcon-realty.webp" },
+      { name: "Mali Kitchens", logo: "images/season1/sponsors/s1-sponsor-06-mali-kitchens.webp" },
+      { name: "Mayur Enterprises", logo: "images/season1/sponsors/s1-sponsor-07-mayur-enterprises.webp" },
+      { name: { mr: "मधुशाम बिल्डकॉन", en: "Madhusham Buildcon" }, logo: "images/season1/sponsors/s1-sponsor-08-madhusham-buildcon.webp" },
+      { name: "Aaradhya Developers", logo: "images/season1/sponsors/s1-sponsor-09-aaradhya-developers.webp" },
+      { name: "KK Engineering Works", logo: "images/season1/sponsors/s1-sponsor-10-kk-engineering-works.webp" },
+      { name: "Raka Sheth Mali Builders & Associates", logo: "images/season1/sponsors/s1-sponsor-11-raka-sheth-mali.webp" },
+      { name: "Hotel Godavari – Shraddha Lawns", logo: "images/season1/sponsors/s1-sponsor-12-hotel-godavari.webp" },
+      { name: { mr: "बुधा हलवाई जिलेबीवाले", en: "Budha Halwai Jilebiwale" }, logo: "images/season1/sponsors/s1-sponsor-13-budha-halwai.webp" },
+      { name: "Carriall Bags & Luggage", logo: "images/season1/sponsors/s1-sponsor-14-carriall.webp" },
+      { name: "Perfect Buildcon", logo: "images/season1/sponsors/s1-sponsor-15-perfect-buildcon.webp" },
+    ],
   },
 
   /* =================================================================
@@ -446,6 +466,12 @@ window.SITE_CONFIG = {
     awardsTitle: { mr: "खेळाडू पुरस्कार", en: "Player awards" },
     galleryEyebrow: { mr: "गॅलरी", en: "Gallery" },
     galleryTitle: { mr: "पर्व १ च्या आठवणी", en: "Season 1 moments" },
+    s1SponsorsEyebrow: { mr: "आमचे भागीदार", en: "Our partners" },
+    s1SponsorsTitle: { mr: "पर्व १ चे प्रायोजक", en: "Season 1 Sponsors" },
+    s1SponsorsText: {
+      mr: "पर्व १ यशस्वी करण्यासाठी पाठबळ दिल्याबद्दल आमच्या सर्व प्रायोजकांचे मनःपूर्वक आभार.",
+      en: "Heartfelt thanks to all our sponsors for supporting Season 1 and making it a success.",
+    },
 
     prev: { mr: "मागील", en: "Previous" },
     next: { mr: "पुढील", en: "Next" },

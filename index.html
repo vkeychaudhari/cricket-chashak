@@ -30,11 +30,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap">
   <link rel="preload" as="image" href="images/theme/logo-emblem-600.webp" imagesrcset="images/theme/logo-emblem-600.webp 600w, images/theme/logo-emblem-1000.webp 989w" imagesizes="(min-width: 1024px) 430px, 78vw" fetchpriority="high">
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=16">
 
   <script>document.documentElement.classList.add('js');</script>
-  <script src="js/config.js?v=14" defer></script>
-  <script src="js/app.js?v=14" defer></script>
+  <script src="js/config.js?v=16" defer></script>
+  <script src="js/app.js?v=16" defer></script>
 </head>
 <body>
   <a class="skip" href="#main" data-t="skip"></a>
@@ -338,6 +338,18 @@
             <h2 data-t="galleryTitle"></h2>
           </header>
           <div class="gallery" id="galleryGrid"></div>
+        </div>
+      </section>
+
+      <!-- SEASON 1 SPONSORS (logo wall from config.season1.sponsors) -->
+      <section class="section section--light" id="season1-sponsors" aria-labelledby="s1SponsorsTitle">
+        <div class="container">
+          <header class="sec-head reveal">
+            <span class="eyebrow" data-t="s1SponsorsEyebrow"></span>
+            <h2 id="s1SponsorsTitle" data-t="s1SponsorsTitle"></h2>
+            <p class="sec-intro" data-t="s1SponsorsText"></p>
+          </header>
+          <ul class="s1-sponsors" id="s1SponsorGrid"></ul>
         </div>
       </section>
     </div>

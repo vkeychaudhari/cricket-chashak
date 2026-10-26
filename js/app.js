@@ -525,6 +525,16 @@
   }
 
   let galleryItems = [];
+  function renderSeason1Sponsors() {
+    const list = C.season1.sponsors || [];
+    const section = $('#season1-sponsors');
+    if (!list.length) { section.hidden = true; return; }
+    $('#s1SponsorGrid').innerHTML = list.map((s, i) => `
+      <li class="s1-sponsor reveal" style="--d:${(i % 5) * 0.05}s" ${A('title', s.name)}>
+        ${img(s.logo, { kind: 'photo', label: `Sponsor logo ${i + 1}`, w: 800, h: 500 }, { alt: s.name })}
+      </li>`).join('');
+  }
+
   function renderGallery() {
     const pattern = ['big', '', '', 'tall', '', '', 'wide', '', 'tall', '', '', ''];
     galleryItems = (C.season1.gallery || []).map((g, i) => {
@@ -872,6 +882,7 @@
   renderPodium();
   renderAwards();
   renderGallery();
+  renderSeason1Sponsors();
   wireLinks();
   initSheet();
   initLightbox();

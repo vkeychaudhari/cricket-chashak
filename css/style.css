@@ -422,6 +422,7 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
 .prize-win__tba { margin-top: 6px; padding: 6px 14px; border-radius: 999px; border: 1px dashed rgba(255, 196, 67, .45); color: var(--gold-300); font-size: .9rem; font-weight: 600; }
 .sec-intro { max-width: 62ch; margin: 16px auto 0; color: var(--muted); font-size: 1.02rem; }
 .sec-intro[hidden] { display: none; }
+.section--light .sec-intro { color: var(--ink-2); }
 
 .prize-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .prize {
@@ -824,6 +825,23 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
   .gallery { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 14px; }
   .g-item__cap { font-size: 1rem; left: 16px; bottom: 14px; }
 }
+
+/* ---------- season 1 sponsors (logo wall) ---------- */
+.s1-sponsors { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.s1-sponsor {
+  position: relative; overflow: hidden; aspect-ratio: 3 / 2; border-radius: 18px;
+  background: #fff; border: 1px solid rgba(8, 26, 58, .08); box-shadow: 0 12px 28px -22px rgba(4, 22, 50, .5);
+  transition: transform .3s var(--ease), box-shadow .3s, border-color .3s;
+}
+.s1-sponsor:hover { transform: translateY(-4px); border-color: rgba(255, 196, 67, .7); box-shadow: 0 18px 36px -22px rgba(4, 22, 50, .55); }
+/* logo sits inside a fixed inset box so every tile keeps the same height */
+.s1-sponsor img { position: absolute; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); object-fit: contain; }
+@media (max-width: 599px) {
+  /* odd count on a 2-column phone grid: centre the last logo */
+  .s1-sponsor:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 6px); }
+}
+@media (min-width: 600px) { .s1-sponsors { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } }
+@media (min-width: 1024px) { .s1-sponsors { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; } .s1-sponsor img { inset: 18px; width: calc(100% - 36px); height: calc(100% - 36px); } }
 
 /* ---------- footer ---------- */
 .ftr { position: relative; padding: 60px 20px 120px; background: var(--navy-950); color: var(--muted); border-top: 1px solid rgba(255, 196, 67, .2); }
