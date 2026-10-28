@@ -31,6 +31,7 @@ All the text, fees, dates, prizes, teams, players, quotes and links live in **`j
 | Auction date/time/venue (the countdown uses this), start & final dates | `season2.schedule` |
 | Venue name, address, map | `season2.venue` (and optional `links.mapEmbed`) |
 | Mahatma Phule quotes | `season2.quotes` |
+| Season 1 poster (shown first on the Season 1 tab) | `season1.poster` |
 | **Season 1 teams, owners, players** (the slideshow) | `season1.teams` |
 | Player awards | `season1.awards` |
 | Gallery photos and captions | `season1.gallery` |
@@ -76,6 +77,7 @@ images/
 ├── phule-portrait-v2.webp        ← Mahatma Phule portrait (quotes section)
 ├── og-image.jpg                  ← WhatsApp preview picture (already made)
 └── season1/
+    ├── s1-poster-1600.webp / s1-poster-800.webp    ← poster at the top of the Season 1 tab
     ├── owners/team-1-owner.jpg … team-8-owner.jpg   ← owner photos (portrait, ~800×1000)
     ├── logos/team-1-logo.png  … team-8-logo.png     ← team logos (square, ~400×400)
     ├── awards/best-batter.jpg, best-bowler.jpg, best-fielder.jpg, mvp.jpg

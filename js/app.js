@@ -202,25 +202,6 @@
     return both((l) => `${fmtDate(s.tournamentStart, l, { day: 'numeric' })} – ${fmtDate(s.final, l, { day: 'numeric', month: 'long', year: 'numeric' })}`);
   }
 
-  function renderTicker() {
-    const s2 = C.season2;
-    const teams = s2.keyInfo.find((k) => k.icon === 'shield');
-    const players = s2.keyInfo.find((k) => k.icon === 'users');
-    const win = s2.prizes.team[0];
-    const items = [
-      C.tournament.badge,
-      teams && both((l) => `${num(teams.value, l)} ${pick(teams.unit, l)}`),
-      players && both((l) => `${num(players.value, l)} ${pick(players.unit, l)}`),
-      tournamentRange(),
-      venue.city,
-      win && win.amount && both((l) => `${pick(win.title, l)} – ₹${num(win.amount, l)}`),
-      label('registrationOpen'),
-      C.tournament.tagline,
-    ].filter(Boolean);
-    const run = items.map((v, i) => `<span class="ticker__item">${T(v)}${icon(i % 2 ? 'star' : 'ball')}</span>`).join('');
-    $('#ticker').innerHTML = run + run;
-  }
-
   function renderKeyInfo() {
     $('#keyInfo').innerHTML = C.season2.keyInfo.map((k, i) => `
       <article class="stat spot reveal" style="--d:${i * 0.08}s">
@@ -478,6 +459,16 @@
           </div>
         </article>`;
     }).join('');
+  }
+
+  function renderPoster() {
+    const p = C.season1.poster;
+    if (!p || !p.src) { $('#s1-poster').remove(); return; } // the team slideshow then opens the tab
+    const set = p.small ? ` srcset="${esc(p.small)} 800w, ${esc(p.src)} 1600w" sizes="(min-width: 1200px) 1160px, calc(100vw - 36px)"` : '';
+    $('#s1Poster').innerHTML = `
+      <a class="s1-poster__link reveal" href="${esc(p.src)}" target="_blank" rel="noopener" ${A('aria-label', label('posterOpen'))}>
+        <img src="${esc(p.src)}"${set} width="1600" height="1066" ${A('alt', p.alt)} loading="lazy" decoding="async">
+      </a>`;
   }
 
   let galleryItems = [];
@@ -829,13 +820,13 @@
      ================================================================= */
   initLang();
   fillStatic();
-  renderTicker();
   renderKeyInfo();
   renderPrizes();
   renderSchedule();
   renderQuotes();
   renderContact();
   renderSponsors();
+  renderPoster();
   renderTeams();
   renderAwards();
   renderGallery();

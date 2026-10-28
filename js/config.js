@@ -21,7 +21,6 @@ window.SITE_CONFIG = {
     nameLine2: { mr: "क्रिकेट चषक", en: "Cricket Chashak" },
     shortName: { mr: "महात्मा जोतीराव फुले क्रिकेट चषक", en: "Mahatma Jotirao Phule Cricket Chashak" },
     season: { mr: "पर्व ०२ – २०२७", en: "Season 02 – 2027" },
-    badge: { mr: "पर्व २", en: "Season 2" },
     tagline: { mr: "समतेचा खेळ, एकतेचा उत्सव!", en: "A game of equality, a celebration of unity!" },
     logo: "images/theme/logo-header.webp", // small logo (header + footer). The big hero emblem is images/theme/logo-emblem-*.webp
     organizer: { mr: "", en: "" }, // optional – e.g. { mr: "आयोजक मंडळ, नाशिक", en: "Organising Committee, Nashik" }
@@ -130,6 +129,13 @@ window.SITE_CONFIG = {
      ================================================================= */
   season1: {
     season: { mr: "पर्व ०१ – २०२६", en: "Season 01 – 2026" },
+
+    // Poster shown first on the Season 1 tab (tap opens the full-size image). Set src: "" to hide it.
+    poster: {
+      src: "images/season1/s1-poster-1600.webp",
+      small: "images/season1/s1-poster-800.webp", // phones load this one
+      alt: { mr: "महात्मा जोतीराव फुले क्रिकेट चषक – पर्व १: प्रायोजक आणि संघ", en: "Mahatma Jotirao Phule Cricket Chashak – Season 1: sponsors and teams" },
+    },
 
     /* Owner & Team slideshow — add / remove / edit teams here.
        id: short unique name (used by awards below)
@@ -381,7 +387,6 @@ window.SITE_CONFIG = {
     language: { mr: "भाषा", en: "Language" },
 
     registerNow: { mr: "आत्ताच नोंदणी करा", en: "Register Now" },
-    registrationOpen: { mr: "नोंदणी सुरू!", en: "Registrations open!" },
     viewDetails: { mr: "स्पर्धेची माहिती", en: "Tournament details" },
     countdownAuction: { mr: "खेळाडू लिलावासाठी उरलेला वेळ", en: "Countdown to the Player Auction" },
     countdownStart: { mr: "पहिल्या चेंडूसाठी उरलेला वेळ", en: "Countdown to the first ball" },
@@ -449,6 +454,7 @@ window.SITE_CONFIG = {
     galleryEyebrow: { mr: "गॅलरी", en: "Gallery" },
     galleryTitle: { mr: "पर्व १ च्या आठवणी", en: "Season 1 moments" },
     s1SponsorsEyebrow: { mr: "आमचे भागीदार", en: "Our partners" },
+    posterOpen: { mr: "पोस्टर मोठ्या आकारात पहा", en: "Open the full-size poster" },
     s1SponsorsTitle: { mr: "पर्व १ चे प्रायोजक", en: "Season 1 Sponsors" },
     s1SponsorsText: {
       mr: "पर्व १ यशस्वी करण्यासाठी पाठबळ दिल्याबद्दल आमच्या सर्व प्रायोजकांचे मनःपूर्वक आभार.",
