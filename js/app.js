@@ -462,50 +462,6 @@
       </div>`).join('');
   }
 
-  function renderPodium() {
-    const st = C.season1.standings || {};
-    const places = { 1: st.winner, 2: st.runnerUp, 3: st.third, 4: st.fourth };
-    const names = { 1: 'champion', 2: 'runnerUp', 3: 'third', 4: 'fourth' };
-    const logo = (t) => img(t.logo, { kind: 'logo', initials: initials(t), color: t.color }, { alt: both((l) => `${pick(t.name, l)} ${pick(label('logo'), l)}`) });
-    const sparkles = [[8, 18, 0], [86, 10, .8], [16, 46, 1.6], [80, 40, .4], [50, -4, 1.2]]
-      .map(([x, y, d]) => `<svg class="sparkle" style="left:${x}%;top:${y}%;animation-delay:${d}s" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"></use></svg>`).join('');
-
-    // results not confirmed yet: show a calm placeholder instead of an empty podium
-    const hasResults = [1, 2, 3].some((p) => teamById[places[p]]);
-    $('.podium-floor').hidden = !hasResults;
-    if (!hasResults) {
-      $('#podium').innerHTML = `<div class="podium-soon reveal"><svg class="podium-soon__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-trophy-fill"></use></svg><p>${L('resultsSoon')}</p></div>`;
-      $('#podium4').innerHTML = '';
-      return;
-    }
-
-    $('#podium').innerHTML = [2, 1, 3].map((p) => {
-      const t = teamById[places[p]];
-      if (!t) return '<div></div>';
-      const trophy = { 1: 'trophy-fill', 2: 'trophy-silver', 3: 'trophy-bronze' }[p];
-      const ic = `<svg class="pod__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#i-${trophy}"></use></svg>`;
-      return `
-        <div class="pod pod--${p} reveal" style="--d:${p === 1 ? 0 : p === 2 ? 0.15 : 0.3}s;--ring:${esc(t.color)}">
-          ${p === 1 ? sparkles : ''}
-          ${ic}
-          <div class="pod__logo"${logoBg(t)}>${logo(t)}</div>
-          <h3 class="pod__team">${T(t.name)}</h3>
-          <p class="pod__owner">${T(t.owner)}</p>
-          <span class="pod__label">${L(names[p])}</span>
-          <div class="pod__step">${N(p)}</div>
-        </div>`;
-    }).join('');
-
-    const t4 = teamById[places[4]];
-    $('#podium4').innerHTML = t4 ? `
-      <div class="pod4 reveal" style="--ring:${esc(t4.color)}">
-        <span class="medal medal--4">${N(4)}</span>
-        <div class="pod4__logo"${logoBg(t4)}>${logo(t4)}</div>
-        <div class="pod4__info"><strong>${T(t4.name)}</strong><span>${T(t4.owner)}</span></div>
-        <span class="pod4__tag">${L('fourth')}</span>
-      </div>` : '';
-  }
-
   function renderAwards() {
     $('#awardCards').innerHTML = (C.season1.awards || []).map((a, i) => {
       const t = teamById[a.team] || {};
@@ -536,7 +492,9 @@
   }
 
   function renderGallery() {
-    const pattern = ['big', '', '', '', '', '', 'wide', '', 'tall', '', '', ''];
+    // tile sizes per photo; 4 photos: big winner photo + wide runner-up + two regular tiles fill the grid exactly
+    const count = (C.season1.gallery || []).length;
+    const pattern = count === 4 ? ['big', 'wide', '', ''] : ['big', '', '', '', '', '', 'wide', '', 'tall', '', '', ''];
     galleryItems = (C.season1.gallery || []).map((g, i) => {
       const ph = { kind: 'photo', label: `Season 1 photo ${i + 1}`, w: 1200, h: 800, color: i % 2 ? '#0A3A7A' : '#075FC6' };
       return { src: g.src, caption: g.caption, html: img(g.src, ph, { alt: g.caption }), ph: PH.length - 1 };
@@ -879,7 +837,6 @@
   renderContact();
   renderSponsors();
   renderTeams();
-  renderPodium();
   renderAwards();
   renderGallery();
   renderSeason1Sponsors();

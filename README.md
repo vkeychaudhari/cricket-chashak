@@ -32,7 +32,6 @@ All the text, fees, dates, prizes, teams, players, quotes and links live in **`j
 | Venue name, address, map | `season2.venue` (and optional `links.mapEmbed`) |
 | Mahatma Phule quotes | `season2.quotes` |
 | **Season 1 teams, owners, players** (the slideshow) | `season1.teams` |
-| Final standings (podium) | `season1.standings` |
 | Player awards | `season1.awards` |
 | Gallery photos and captions | `season1.gallery` |
 | **Sponsorship cards, sponsor logos, sponsorship phone / WhatsApp message** | `sponsors` |
@@ -57,9 +56,9 @@ All the text, fees, dates, prizes, teams, players, quotes and links live in **`j
 ### ⚠ Please check before publishing
 - **Auction date/time/venue**: empty until announced (shows "Date to be announced").
 - **Prize amounts**: hidden until announced (`amount: null` in `season2.prizes`).
-- **Start/final timings**: dummy.
+- **Start/final timings**: hidden (only dates show) until set in `season2.schedule.startTime` / `finalTime`.
 - **Quotes**: the first two are well-known lines from Phule's writings. The 3rd and 4th are popular attributions/paraphrases. Please verify the wording.
-- **Season 1 final standings and gallery photos**: not added yet (teams, squads and award winners are real).
+- **Season 1**: teams, squads, award winners, sponsors and result photos are real. More gallery photos can be added any time.
 
 ---
 
@@ -74,13 +73,14 @@ images/
 │   ├── logo-header.webp          ← small logo in header + footer
 │   ├── stadium-mobile.webp / stadium-desktop.webp     ← hero stadium backgrounds
 │   └── favicon-64.png, apple-touch-icon.png, particles.png, brush-strokes.svg, gold-divider.svg
-├── phule-portrait.jpg            ← Mahatma Phule portrait (quotes section)
+├── phule-portrait.webp           ← Mahatma Phule portrait (quotes section, cropped from the emblem art)
 ├── og-image.jpg                  ← WhatsApp preview picture (already made)
 └── season1/
     ├── owners/team-1-owner.jpg … team-8-owner.jpg   ← owner photos (portrait, ~800×1000)
     ├── logos/team-1-logo.png  … team-8-logo.png     ← team logos (square, ~400×400)
     ├── awards/best-batter.jpg, best-bowler.jpg, best-fielder.jpg, mvp.jpg
-    └── gallery/photo-01.jpg … photo-12.jpg          ← match photos (landscape, ~1200×800)
+    ├── gallery/s1-01 … s1-04-*.webp                 ← Season 1 result photos (add more and list them in config)
+    └── sponsors/s1-sponsor-01 … 16-*.webp           ← Season 1 sponsor logos
 ```
 
 Tips:

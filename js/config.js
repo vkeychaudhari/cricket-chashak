@@ -83,9 +83,9 @@ window.SITE_CONFIG = {
         venue: "", // e.g. { mr: "…, नाशिक", en: "…, Nashik" } — leave "" until announced
       },
       tournamentStart: "2027-01-09",
-      startTime: { mr: "सकाळी ८ वाजल्यापासून", en: "From 8:00 AM" }, // DUMMY
+      startTime: "", // optional, e.g. { mr: "सकाळी ८ वाजल्यापासून", en: "From 8:00 AM" } — leave "" to hide
       final: "2027-01-10",
-      finalTime: { mr: "सायंकाळी ५ वाजता", en: "5:00 PM onwards" },   // DUMMY
+      finalTime: "",  // optional, same format as startTime
     },
 
     venue: {
@@ -122,7 +122,7 @@ window.SITE_CONFIG = {
         source: { mr: "महात्मा फुले यांचे विचार", en: "Thoughts of Mahatma Phule" }, // ⚠ REVIEW (popular attribution)
       },
     ],
-    portrait: "images/phule-portrait.jpg", // portrait for the quotes frame
+    portrait: "images/phule-portrait.webp", // portrait for the quotes frame (cropped from the official emblem art)
   },
 
   /* =================================================================
@@ -132,7 +132,7 @@ window.SITE_CONFIG = {
     season: { mr: "पर्व ०१ – २०२६", en: "Season 01 – 2026" },
 
     /* Owner & Team slideshow — add / remove / edit teams here.
-       id: short unique name (used by standings & awards below)
+       id: short unique name (used by awards below)
        name: team name (teams without a confirmed name currently show the owner's brand)
        brand: optional – owner's business, shown under the owner's name
        logoBg: optional – logo plate colour for logos drawn on a dark background (e.g. "#000000")
@@ -241,16 +241,6 @@ window.SITE_CONFIG = {
       },
     ],
 
-    // Final standings – use the team "id" from the list above.
-    // Leave "" until results are confirmed — the podium then shows "results coming soon".
-    standings: {
-      winner: "",
-      runnerUp: "",
-      third: "",
-      fourth: "",
-    },
-
-    // Player awards – team = team "id"; stat line is free text
     // Season 1 award winners. team = team id (or ""), stat = optional short stat line
     awards: [
       { icon: "bat", title: { mr: "सर्वोत्कृष्ट फलंदाज", en: "Best Batter" }, player: "Abhi Shirsath", team: "",
@@ -264,20 +254,12 @@ window.SITE_CONFIG = {
     ],
 
     // Photo gallery – add as many as you like
-    // Photo gallery. Entries still pointing at photo-NN.jpg show a placeholder until that file is added.
+    // Photo gallery – add more photos to images/season1/gallery/ and list them here.
     gallery: [
       { src: "images/season1/gallery/s1-01-winner-team.webp", caption: { mr: "विजेता संघ", en: "Winner Team" } },
       { src: "images/season1/gallery/s1-02-runner-up-team.webp", caption: { mr: "उपविजेता संघ", en: "Runner-up Team" } },
       { src: "images/season1/gallery/s1-03-third-place-team.webp", caption: { mr: "तृतीय क्रमांक संघ", en: "3rd Place Team" } },
       { src: "images/season1/gallery/s1-04-fourth-place-team.webp", caption: { mr: "चतुर्थ क्रमांक संघ", en: "4th Place Team" } },
-      { src: "images/season1/gallery/photo-05.jpg", caption: { mr: "अप्रतिम झेल", en: "A stunning catch" } },
-      { src: "images/season1/gallery/photo-06.jpg", caption: { mr: "प्रेक्षकांचा उत्साह", en: "The roaring crowd" } },
-      { src: "images/season1/gallery/photo-07.jpg", caption: { mr: "संघ फोटो", en: "Team photo" } },
-      { src: "images/season1/gallery/photo-08.jpg", caption: { mr: "अंतिम सामना", en: "The grand final" } },
-      { src: "images/season1/gallery/photo-09.jpg", caption: { mr: "विजेत्यांचा जल्लोष", en: "Champions celebrate" } },
-      { src: "images/season1/gallery/photo-10.jpg", caption: { mr: "बक्षीस वितरण", en: "Prize distribution" } },
-      { src: "images/season1/gallery/photo-11.jpg", caption: { mr: "मान्यवरांची उपस्थिती", en: "Distinguished guests" } },
-      { src: "images/season1/gallery/photo-12.jpg", caption: { mr: "पर्व १ – एक आठवण", en: "Season 1 – a memory" } },
     ],
 
     // Season 1 sponsors — logo wall at the end of the Season 1 tab, shown in this order.
@@ -298,6 +280,7 @@ window.SITE_CONFIG = {
       { name: { mr: "बुधा हलवाई जिलेबीवाले", en: "Budha Halwai Jilebiwale" }, logo: "images/season1/sponsors/s1-sponsor-13-budha-halwai.webp" },
       { name: "Carriall Bags & Luggage", logo: "images/season1/sponsors/s1-sponsor-14-carriall.webp" },
       { name: "Perfect Buildcon", logo: "images/season1/sponsors/s1-sponsor-15-perfect-buildcon.webp" },
+      { name: "The Nasik Merchants Co-operative Bank Ltd.", logo: "images/season1/sponsors/s1-sponsor-16-nasik-merchants-bank.webp" },
     ],
   },
 
@@ -453,15 +436,8 @@ window.SITE_CONFIG = {
     squad: { mr: "संघातील खेळाडू", en: "Squad" },
     playersUnit: { mr: "खेळाडू", en: "players" },
     squadSoon: { mr: "संघातील खेळाडूंची यादी लवकरच अपडेट होईल.", en: "The squad list will be updated soon." },
-    resultsSoon: { mr: "पर्व १ चे अंतिम निकाल लवकरच अपडेट होतील.", en: "Season 1 final results will be updated soon." },
     logo: { mr: "लोगो", en: "logo" },
 
-    standingsEyebrow: { mr: "निकाल", en: "Results" },
-    standingsTitle: { mr: "अंतिम क्रमवारी", en: "Final standings" },
-    champion: { mr: "विजेता", en: "Champions" },
-    runnerUp: { mr: "उपविजेता", en: "Runner-up" },
-    third: { mr: "तृतीय", en: "3rd place" },
-    fourth: { mr: "चतुर्थ क्रमांक", en: "4th place" },
 
     awardsEyebrow: { mr: "सन्मान", en: "Honours" },
     awardsTitle: { mr: "खेळाडू पुरस्कार", en: "Player awards" },

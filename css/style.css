@@ -714,71 +714,6 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
   .squad { grid-template-columns: repeat(3, 1fr); gap: 10px; }
 }
 
-/* ---------- podium ---------- */
-.section--podium {
-  color: var(--white); overflow: hidden;
-  background: radial-gradient(45% 50% at 50% 38%, rgba(255, 196, 67, .18), transparent 70%), radial-gradient(60% 40% at 50% 100%, rgba(7, 95, 198, .25), transparent 70%), var(--navy-950);
-}
-.podium { display: grid; grid-template-columns: 1fr 1.15fr 1fr; align-items: end; gap: 8px; max-width: 860px; margin: 0 auto; }
-.pod { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; text-align: center; }
-.pod__icon { width: 44px; height: 44px; margin-bottom: 10px; animation: bob 3s ease-in-out infinite; }
-.pod--1 .pod__icon { width: 60px; height: 60px; filter: drop-shadow(0 8px 18px rgba(255, 196, 67, .6)); }
-.pod--2 .pod__icon { filter: drop-shadow(0 6px 14px rgba(207, 213, 219, .45)); animation-delay: -1s; }
-.pod--3 .pod__icon { width: 38px; height: 38px; filter: drop-shadow(0 6px 14px rgba(208, 138, 79, .45)); animation-delay: -2s; }
-.pod__logo { width: 62px; height: 62px; overflow: hidden; border-radius: 50%; background: var(--logo-bg, #fff); box-shadow: 0 0 0 3px var(--ring, #fff), 0 14px 30px -10px rgba(0, 0, 0, .7); }
-.pod--1 .pod__logo { width: 88px; height: 88px; box-shadow: 0 0 0 4px var(--gold), 0 0 40px -4px rgba(255, 196, 67, .7); }
-.pod__logo img { width: 100%; height: 100%; object-fit: contain; padding: 10%; }
-.podium-soon {
-  grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; gap: 14px;
-  padding: 36px 22px; border-radius: 24px; text-align: center;
-  background: var(--card-grad); border: 1.5px dashed rgba(255, 196, 67, .4); color: var(--muted); font-size: 1.05rem; font-weight: 600;
-}
-.podium-soon__icon { width: 72px; height: 72px; filter: drop-shadow(0 10px 24px rgba(255, 196, 67, .4)); animation: bob 3.2s ease-in-out infinite; }
-.pod__team { margin-top: 12px; font-weight: 800; font-size: clamp(.84rem, 3.4vw, 1.2rem); line-height: 1.22; overflow-wrap: anywhere; }
-.pod__owner { margin-top: 3px; font-size: clamp(.72rem, 2.9vw, .9rem); color: var(--muted); }
-.pod__label { margin-top: 8px; padding: 3px 10px; border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .04em; background: rgba(255, 255, 255, .1); }
-.pod--1 .pod__label { background: var(--gold-grad); color: #041329; }
-.pod__step {
-  position: relative; overflow: hidden; width: 100%; margin-top: 14px; padding-top: 10px;
-  display: flex; justify-content: center; border-radius: 16px 16px 0 0;
-  font-family: var(--font-display); font-weight: 900; font-size: clamp(2.4rem, 9vw, 4rem); line-height: 1;
-}
-.pod__step::after {
-  content: ""; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%;
-  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .45), transparent);
-  animation: glint 4.5s ease-in-out infinite;
-}
-.pod--1 .pod__step { height: 190px; background: linear-gradient(180deg, #FFE38A, #F2AC29 60%, #8A5506); color: rgba(4, 19, 41, .82); box-shadow: 0 0 70px -10px rgba(255, 196, 67, .55); }
-.pod--2 .pod__step { height: 135px; background: linear-gradient(180deg, #F1F3F5, #AEB7C0 60%, #6C7680); color: rgba(20, 30, 40, .72); }
-.pod--3 .pod__step { height: 100px; background: linear-gradient(180deg, #FFD6A8, #C27F45 60%, #7A4A22); color: rgba(40, 20, 5, .72); }
-.pod--2 .pod__step::after { animation-delay: .6s; }
-.pod--3 .pod__step::after { animation-delay: 1.2s; }
-.podium-floor { max-width: 900px; height: 14px; margin: 0 auto; border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 196, 67, .5), transparent); filter: blur(4px); }
-.sparkle { position: absolute; width: 14px; height: 14px; color: var(--gold); animation: twinkle 2.4s ease-in-out infinite; pointer-events: none; }
-.pod4 {
-  max-width: 540px; margin: 30px auto 0; display: flex; align-items: center; gap: 14px;
-  padding: 14px 18px; border-radius: 22px; background: var(--card-grad); border: 1px solid var(--line);
-}
-.pod4 .medal { width: 44px; height: 44px; }
-.pod4__logo { width: 50px; height: 50px; flex: none; overflow: hidden; border-radius: 50%; background: var(--logo-bg, #fff); box-shadow: 0 0 0 2px var(--ring, #fff); }
-.pod4__logo img { width: 100%; height: 100%; object-fit: contain; padding: 10%; }
-.pod4__info { flex: 1; min-width: 0; }
-.pod4__info strong { display: block; font-weight: 800; line-height: 1.25; }
-.pod4__info span { font-size: .88rem; color: var(--muted); }
-.pod4__tag { flex: none; padding: 4px 12px; border-radius: 999px; font-size: .76rem; font-weight: 700; background: rgba(94, 143, 214, .2); color: #CFE0FF; }
-
-@media (min-width: 768px) {
-  .podium { gap: 18px; }
-  .pod__icon { width: 58px; height: 58px; }
-  .pod--1 .pod__icon { width: 78px; height: 78px; }
-  .pod--3 .pod__icon { width: 50px; height: 50px; }
-  .pod__logo { width: 84px; height: 84px; }
-  .pod--1 .pod__logo { width: 120px; height: 120px; }
-  .pod--1 .pod__step { height: 240px; }
-  .pod--2 .pod__step { height: 170px; }
-  .pod--3 .pod__step { height: 125px; }
-}
-
 /* ---------- awards ---------- */
 .awards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .award {
@@ -827,8 +762,10 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
 }
 
 /* ---------- season 1 sponsors (logo wall) ---------- */
-.s1-sponsors { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+/* wrapping row layout: a partial last row is centred whatever the logo count */
+.s1-sponsors { --cols: 2; --gap: 12px; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap); }
 .s1-sponsor {
+  flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols));
   position: relative; overflow: hidden; aspect-ratio: 3 / 2; border-radius: 18px;
   background: #fff; border: 1px solid rgba(8, 26, 58, .08); box-shadow: 0 12px 28px -22px rgba(4, 22, 50, .5);
   transition: transform .3s var(--ease), box-shadow .3s, border-color .3s;
@@ -836,12 +773,8 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
 .s1-sponsor:hover { transform: translateY(-4px); border-color: rgba(255, 196, 67, .7); box-shadow: 0 18px 36px -22px rgba(4, 22, 50, .55); }
 /* logo sits inside a fixed inset box so every tile keeps the same height */
 .s1-sponsor img { position: absolute; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); object-fit: contain; }
-@media (max-width: 599px) {
-  /* odd count on a 2-column phone grid: centre the last logo */
-  .s1-sponsor:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 6px); }
-}
-@media (min-width: 600px) { .s1-sponsors { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } }
-@media (min-width: 1024px) { .s1-sponsors { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; } .s1-sponsor img { inset: 18px; width: calc(100% - 36px); height: calc(100% - 36px); } }
+@media (min-width: 600px) { .s1-sponsors { --cols: 3; --gap: 16px; } }
+@media (min-width: 1024px) { .s1-sponsors { --cols: 5; --gap: 18px; } .s1-sponsor img { inset: 18px; width: calc(100% - 36px); height: calc(100% - 36px); } }
 
 /* ---------- footer ---------- */
 .ftr { position: relative; padding: 60px 20px 120px; background: var(--navy-950); color: var(--muted); border-top: 1px solid rgba(255, 196, 67, .2); }
@@ -1112,8 +1045,8 @@ html[lang="mr"] .brand__text strong { letter-spacing: 0; }
    Barlow Condensed is Latin-only and tuned for tight caps, so Marathi text uses
    Noto Sans Devanagari with its own sizes, line-heights and no letter-spacing. */
 html[lang="mr"] :is(.eyebrow, .cd__unit, .prize-win__place, .tl__tag, .tcard__kicker, .tcard__squad-title,
-  .tcard__owner small, .pod__label, .ticker__item, .sub-head) { letter-spacing: 0; text-transform: none; }
-html[lang="mr"] :is(.cd__num, .stat__num, .prize-win__amt, .prize__amt, .ind__prize, .pod__step,
+  .tcard__owner small, .ticker__item, .sub-head) { letter-spacing: 0; text-transform: none; }
+html[lang="mr"] :is(.cd__num, .stat__num, .prize-win__amt, .prize__amt, .ind__prize,
   .medal, .cd__msg, .sec-head h2, .cta h2, .sub-head, .tcard__team, .ticker__item, .squad li b) { font-family: var(--font-mr); }
 html[lang="mr"] .hero__title .l1 {
   padding-left: 0; letter-spacing: 0; text-transform: none; font-weight: 700; font-size: clamp(1.05rem, 4.8vw, 1.6rem);
@@ -1136,7 +1069,6 @@ html[lang="mr"] .stat__num { font-size: clamp(2.2rem, 9.4vw, 3.4rem); line-heigh
 html[lang="mr"] .prize-win__amt { font-size: clamp(2.6rem, 12vw, 4.4rem); line-height: 1.2; }
 html[lang="mr"] .prize-win__amt--text { font-size: clamp(2.2rem, 9vw, 3.4rem); line-height: 1.3; }
 html[lang="mr"] .prize__amt { font-size: clamp(1.1rem, 4.6vw, 1.8rem); }
-html[lang="mr"] .pod__step { font-size: clamp(2rem, 7.5vw, 3.4rem); line-height: 1.1; }
 html[lang="mr"] .cd__msg { font-size: clamp(1.4rem, 6vw, 2rem); line-height: 1.4; }
 
 /* ---------- reveal + panel transitions ---------- */
