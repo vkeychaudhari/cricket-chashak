@@ -70,7 +70,7 @@ window.SITE_CONFIG = {
       individual: [
         { icon: "bat", title: { mr: "सर्वोत्कृष्ट फलंदाज", en: "Best Batter" }, amount: null, extra: { mr: "+ चषक", en: "+ Trophy" } },
         { icon: "ball", title: { mr: "सर्वोत्कृष्ट गोलंदाज", en: "Best Bowler" }, amount: null, extra: { mr: "+ चषक", en: "+ Trophy" } },
-        { icon: "hand", title: { mr: "सर्वोत्कृष्ट क्षेत्ररक्षक", en: "Best Fielder" }, amount: null, extra: { mr: "+ चषक", en: "+ Trophy" } },
+        { icon: "medal", title: { mr: "सामनावीर (MOM)", en: "Man of the Match (MOM)" }, amount: null, extra: { mr: "प्रत्येक सामन्यासाठी", en: "For every match" } },
         { icon: "star", title: { mr: "मालिकावीर (MVP)", en: "MVP – Player of the Series" }, amount: null, extra: { mr: "+ चषक", en: "+ Trophy" } },
       ],
     },
@@ -122,7 +122,7 @@ window.SITE_CONFIG = {
         source: { mr: "महात्मा फुले यांचे विचार", en: "Thoughts of Mahatma Phule" }, // ⚠ REVIEW (popular attribution)
       },
     ],
-    portrait: "images/phule-portrait.webp", // portrait for the quotes frame (cropped from the official emblem art)
+    portrait: "images/phule-portrait-v2.webp", // portrait for the quotes frame
   },
 
   /* =================================================================
@@ -281,6 +281,11 @@ window.SITE_CONFIG = {
       { name: "Carriall Bags & Luggage", logo: "images/season1/sponsors/s1-sponsor-14-carriall.webp" },
       { name: "Perfect Buildcon", logo: "images/season1/sponsors/s1-sponsor-15-perfect-buildcon.webp" },
       { name: "The Nasik Merchants Co-operative Bank Ltd.", logo: "images/season1/sponsors/s1-sponsor-16-nasik-merchants-bank.webp" },
+      { name: { mr: "खैरनार जिलेबीवाले", en: "Khairnar Jilebiwale" }, logo: "images/season1/sponsors/s1-sponsor-17-khairnar-jilebiwale.webp" },
+      { name: "Ashwamedh", logo: "images/season1/sponsors/s1-sponsor-18-ashwamedh.webp" },
+      { name: "Amar Sound", logo: "images/season1/sponsors/s1-sponsor-19-amar-sound.webp" },
+      { name: "Bolkar Builders and Developers – Shree Swami Samarth Construction", logo: "images/season1/sponsors/s1-sponsor-20-bolkar-builders.webp" },
+      { name: { mr: "वेध न्यूज", en: "Vedh News" }, logo: "images/season1/sponsors/s1-sponsor-21-vedh-news.webp" },
     ],
   },
 
@@ -482,7 +487,6 @@ window.SITE_CONFIG = {
     quickLinks: { mr: "दुवे", en: "Quick links" },
     contactHeading: { mr: "संपर्क", en: "Contact" },
     organizedBy: { mr: "आयोजक", en: "Organised by" },
-    madeWith: { mr: "नाशिकमध्ये ❤️ ने बनवले", en: "Made with ❤️ in Nashik" },
     rights: { mr: "सर्व हक्क राखीव.", en: "All rights reserved." },
   },
 };

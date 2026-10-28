@@ -73,14 +73,14 @@ images/
 │   ├── logo-header.webp          ← small logo in header + footer
 │   ├── stadium-mobile.webp / stadium-desktop.webp     ← hero stadium backgrounds
 │   └── favicon-64.png, apple-touch-icon.png, particles.png, brush-strokes.svg, gold-divider.svg
-├── phule-portrait.webp           ← Mahatma Phule portrait (quotes section, cropped from the emblem art)
+├── phule-portrait-v2.webp        ← Mahatma Phule portrait (quotes section)
 ├── og-image.jpg                  ← WhatsApp preview picture (already made)
 └── season1/
     ├── owners/team-1-owner.jpg … team-8-owner.jpg   ← owner photos (portrait, ~800×1000)
     ├── logos/team-1-logo.png  … team-8-logo.png     ← team logos (square, ~400×400)
     ├── awards/best-batter.jpg, best-bowler.jpg, best-fielder.jpg, mvp.jpg
     ├── gallery/s1-01 … s1-04-*.webp                 ← Season 1 result photos (add more and list them in config)
-    └── sponsors/s1-sponsor-01 … 16-*.webp           ← Season 1 sponsor logos
+    └── sponsors/s1-sponsor-01 … 21-*.webp           ← Season 1 sponsor logos
 ```
 
 Tips:
